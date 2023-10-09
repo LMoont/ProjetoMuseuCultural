@@ -25,5 +25,6 @@ main ()
     printf("Refere-se à próxima edição dos Jogos Olímpicos de Verão que ocorrerão em Paris, França, em 2024.\n\n");
 
     venda_bilhete();
+    pagamento_bilhete();
 }
 

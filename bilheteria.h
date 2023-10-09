@@ -3,14 +3,12 @@
 
 #define MAX_BILHETES 100
 
-// Declaração de função para venda de bilhetes
 void venda_bilhete();
+void pagamento_bilhete();
 
-// Declaração do array para armazenar os bilhetes comprados
+extern char bilhetesDoUsuario[MAX_BILHETES][100], nomeUsuario;
+extern int numCompras, idadeUsuario, pcd, estudante;
 
-extern char bilhetesDoUsuario[MAX_BILHETES][100];
 
-// Variável para rastrear o número de bilhetes comprados
-extern int numCompras;
 
 #endif
