@@ -7,7 +7,7 @@
 
 #define MAX_BILHETES 100
 
-char bilhetesDoUsuario[MAX_BILHETES][100], nomeUsuario;
+char bilhetesDoUsuario[MAX_BILHETES][100], nomeUsuario[30];
 int numCompras = 0, idadeUsuario, pcd;
 
 void venda_bilhete() {
@@ -19,7 +19,7 @@ void venda_bilhete() {
     printf("============== BILHETERIA =============\n\n");
 
     printf("Informe o seu nome: ");
-    scanf("%s", &nomeUsuario);
+    gets(nomeUsuario);
 
     printf("Informe a sua idade: ");
     scanf("%d", &idadeUsuario);
@@ -89,7 +89,7 @@ void pagamento_bilhete(){
     setlocale(LC_ALL, "Portuguese");
     srand(time(NULL));
 
-    int diaAleatorio, carterinhaEstudante, formaPagamento;
+    int diaAleatorio, carterinhaEstudante, formaPagamento, pagamentoRealizado;
     float valorIngresso = 50, meiaEntrada = 25, totalPagar;
     char *diasDaSemana[] = {"Domingo", "Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira", "Sábado"};
 
@@ -111,7 +111,7 @@ void pagamento_bilhete(){
             totalPagar = numCompras * meiaEntrada;
             printf("\nTotal a Pagar: R$%.2f\n", totalPagar);
         } else if (pcd == 2) {
-            printf("Possui direito a meia-entrada devido a ser PcD.\n");
+            printf("\nPossui direito a meia-entrada devido a ser PcD.\n");
             totalPagar = numCompras * meiaEntrada;
             printf("\nTotal a Pagar: R$%.2f\n", totalPagar);
         } else {
@@ -148,17 +148,74 @@ void pagamento_bilhete(){
                     case 1:
                     case 2:
                     case 3:
-                        printf("\nPagamento realizado com sucesso!");
+                        pagamentoRealizado = 1;
+                        printf("\nPagamento realizado com sucesso!\n\n");
                         break;
                     default:
                         printf("\nDigite uma opção válida!\n");
                 }
             }
         
-        break;
+        gerarCod_bilhete(pagamentoRealizado);
 }
+
+}
+
+void gerarCod_bilhete(int pagamentoRealizado) {
+    int i;
+    char letras[26] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    int numeros[10] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+    char codigo[5];
+
+    srand(time(NULL));
+
+    FILE *bilhetes;
+    bilhetes = fopen("bilhetes.txt", "w");
+
+    if (bilhetes == NULL) {
+        printf("Erro ao abrir o arquivo\n\n");
+        exit(1);
+    }
+
+    time_t tempoAtual;
+    struct tm *infoTempo;
+    time(&tempoAtual);
+    infoTempo = localtime(&tempoAtual);
+
+for(i = 0; i < numCompras; i++) { 
+    if(pagamentoRealizado){
+        codigo[0] = letras[rand() % 26];
+        codigo[1] = letras[rand() % 26];
+        codigo[2] = '0' + numeros[rand() % 10];
+        codigo[3] = '0' + numeros[rand() % 10];
+        codigo[4] = '\0';
+
+        printf("\nBilhete: %d\n", i+1);
+        printf("Nome: %s\n", nomeUsuario);
+        printf("Idade: %d\n", idadeUsuario);
+        printf(bilhetesDoUsuario[i]);
+        printf("\nCódigo: %s\n", codigo);
+        printf("Data e Hora: %02d/%02d/%d %02d:%02d:%02d\n", 
+           infoTempo->tm_mday, infoTempo->tm_mon + 1, infoTempo->tm_year + 1900, 
+           infoTempo->tm_hour, infoTempo->tm_min, infoTempo->tm_sec);
+
+        fprintf(bilhetes, "Bilhete: %d\n", i+1);
+        fprintf(bilhetes, "Nome: %s\n", nomeUsuario);
+        fprintf(bilhetes, "Idade: %d\n", idadeUsuario);
+        fprintf(bilhetes, "%s", bilhetesDoUsuario[i]);
+        fprintf(bilhetes, "\nCódigo: %s\n", codigo);
+        fprintf(bilhetes, "Data e Hora: %02d/%02d/%d %02d:%02d:%02d\n\n", 
+            infoTempo->tm_mday, infoTempo->tm_mon + 1, infoTempo->tm_year + 1900, 
+            infoTempo->tm_hour, infoTempo->tm_min, infoTempo->tm_sec);
+    }
+}
+
+if(pagamentoRealizado){
+    printf("\nTodos os bilhetes foram gerados com sucesso!\n");
+} 
+
+fclose(bilhetes);
 
 printf("\n\n");
 system("pause");
-
 }
