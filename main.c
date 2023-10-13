@@ -4,9 +4,11 @@
 #include <math.h>
 #include <locale.h>
 #include "bilheteria.h"
+#include "entrada_temas.h"
 
-main ()
+int main ()
 {
+    system("color 1F");
     setlocale(LC_ALL, "Portuguese");
 
     printf("\n=============================================================\n");
@@ -26,5 +28,8 @@ main ()
 
     venda_bilhete();
     pagamento_bilhete();
+    entradaTema();
+
+    return 0;
 }
 
