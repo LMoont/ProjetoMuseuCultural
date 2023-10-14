@@ -27,7 +27,17 @@ void entradaTema(){
             strcpy(validarTema, "150 anos de Santos Dumont");
             validaBilhete();
             break;
-
+        case 3:
+            strcpy(validarTema, "Jogos Olímpicos de Paris 2024");
+            validaBilhete();
+            break;
+        case 4:
+            strcpy(validarTema, "Copa do Mundo Qatar 2022");
+            validaBilhete();
+            break;
+        default:
+            printf("Opção Inválida! Escolha uma opção entre 1 e 4.\n\n");
+            entradaTema();
     }
 }
 
@@ -35,14 +45,6 @@ void validaBilhete(){
     setlocale(LC_ALL, "Portuguese");
     int cont = 0, retorno = 1, encontrado = 0;
     int i;
-
-    FILE *bilhetes;
-    bilhetes = fopen("bilhetes.csv", "r");
-    if(bilhetes == NULL){
-        printf("Erro ao abrir o arquivo!");
-        getch();
-        exit(1);
-    }
 
     printf("Insira as informações presentes no seu bilhete:\n\n");
 
@@ -65,8 +67,9 @@ void validaBilhete(){
     validarCod[strcspn(validarCod, "\n")] = 0;
 
     for (int i = 0; i < numCompras; i++) {
-        if (strcmp(nomeUsuario, validarNome) == 0 && validarIdade == idadeUsuario &&
-            strcmp(temasDoUsuario[i], validarTema) == 0 && strcmp(ingressos[i].codigoBilhete, validarCod) == 0) {
+        if (strcmp(ingressos[0].nome, validarNome) == 0 && validarIdade == ingressos[0].idade &&
+            strcmp(ingressos[i].tema[i], validarTema) == 0 && strcmp(ingressos[i].codigoBilhete[i], validarCod) == 0 &&
+            strcmp(ingressos[i].status[i], "Ativo") == 0 ){
             encontrado = 1;
     }
 }
@@ -77,58 +80,38 @@ void validaBilhete(){
         alterarStatusBilhete();
     } else {
         printf("Bilhete inválido!\n");
-        printf("Tente Novamente.");
+        printf("Tente Novamente.\n\n");
         getch();
         validaBilhete();
     }
 
-    fclose(bilhetes);
 }
 
 void alterarStatusBilhete() {
-    FILE *arquivoOriginal, *arquivoTemporario;
-    char linha[100];
-    char ultimaLinha[100];
-    int contador = 0;
+    int i;
 
-    arquivoOriginal = fopen("bilhetes.csv", "r");
-    arquivoTemporario = fopen("status_bilhetes.csv", "w");
-
-    if(arquivoOriginal == NULL || arquivoTemporario == NULL){
-        perror("Erro ao abrir o arquivo!");
-        return;
-    }
-
-    // Ler linha por linha do arquivo original
-    while (fgets(linha, sizeof(linha), arquivoOriginal) != NULL) {
-        contador++;
-
-        // Salvar a última linha
-        strcpy(ultimaLinha, linha);
-
-        // Copiar todas as linhas, exceto a última, para o arquivo temporário
-        if (!feof(arquivoOriginal)) {
-            fputs(linha, arquivoTemporario);
-        }
-    }
-
-    // Escrever a última linha com status "Inativo"
-    fprintf(arquivoTemporario, "%s; %d; %s; %s; %s\n", validarNome, validarIdade, validarTema, validarCod, "Inativo");
-
-    // Fechar os arquivos
-    fclose(arquivoOriginal);
-    fclose(arquivoTemporario);
-
-    // Verificar se há erros ao remover e renomear os arquivos
-    if(remove("bilhetes.csv") != 0) {
-        perror("Erro ao remover o arquivo original");
+    FILE *bilhetes;
+    bilhetes = fopen("bilhetes.csv", "w");
+    if(bilhetes == NULL){
+        printf("Erro ao abrir o arquivo!");
         getch();
+        exit(1);
     }
-
-    if(rename("status_bilhetes.csv", "bilhetes.csv") != 0) {
-        perror("Erro ao renomear o arquivo temporário");
-        getch();
+    
+    for (i = 0; i < numCompras; i++) {
+    if (strcmp(ingressos[i].codigoBilhete[i], validarCod) == 0) {
+        strcpy(ingressos[i].status[i], "Inativo");
+        break;  // Sai do loop após encontrar o código desejado
     }
+}
 
-    printf("Linha substituída com sucesso!\n");
+    for(i=0; i < numCompras; i++){
+        fprintf(bilhetes, "%s; %d; %s; %s; %s\n",
+        ingressos[0].nome, ingressos[0].idade, ingressos[i].tema[i], 
+        ingressos[i].codigoBilhete[i], ingressos[i].status[i]);
+    }
+    
+    fclose(bilhetes);
+    printf("Gravação feita com sucesso!\n");
+    getch();
 }

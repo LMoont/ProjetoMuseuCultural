@@ -8,15 +8,17 @@ void pagamento_bilhete();
 void gerarCod_bilhete();
 
 extern char temasDoUsuario[MAX_BILHETES][40], nomeUsuario[30], codigo[5];
-extern int numCompras, idadeUsuario, pcd, estudante, temaEscolhido;
+extern int numCompras, idadeUsuario, estudante, temaEscolhido;
 
 struct Registros{
-        int     numBilhete;
+        int numBilhete;
         char    nome[50];
         int     idade;
-        char    tema[50];
-        char    codigoBilhete[5];
-        char    status[10];
-    }ingressos[MAX_BILHETES];
+        char    tema[MAX_BILHETES][50];
+        char    codigoBilhete[MAX_BILHETES][5];
+        char    status[MAX_BILHETES][10];
+    };
+    
+struct Registros ingressos[MAX_BILHETES];
     
 #endif 

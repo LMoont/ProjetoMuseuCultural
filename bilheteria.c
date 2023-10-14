@@ -9,9 +9,9 @@
 #define MAX_BILHETES 50
 
 char temasDoUsuario[MAX_BILHETES][40], nomeUsuario[30];
-int numCompras = 0, idadeUsuario, pcd;
+int numCompras = 0, idadeUsuario;
 int temaEscolhido;
-char codigo[5];
+char codigo[5], pcd;
 
 void venda_bilhete() {
     setlocale(LC_ALL, "Portuguese");
@@ -25,19 +25,20 @@ void venda_bilhete() {
     printf("============== BILHETERIA =============\n\n");
 
     printf("Informe o seu nome: ");
-    gets(nomeUsuario);
+    scanf("%[^\n]", ingressos[numCompras].nome);
 
     printf("Informe a sua idade: ");
-    scanf("%d", &idadeUsuario);
+    scanf("%d", &ingressos[numCompras].idade);
 
-    printf("Você possui alguma deficiência? (1-NÃO / 2-SIM): ");
-    scanf("%d", &pcd);
+    printf("Você possui alguma deficiência? (S / N): ");
+    scanf(" %c", &pcd);
 
     while (getchar() != '\n');
 
-    if (pcd < 1 || pcd > 2){
-        printf("Opção Inválida!");
-        exit(1);
+    if (pcd != 's' && pcd != 'n'){
+        printf("\nOpção Inválida!\n\n");
+        getch();
+        venda_bilhete();
     }
 
     printf("\nEscolha o tema que deseja visitar:\n");
@@ -53,29 +54,33 @@ void venda_bilhete() {
 
         switch(temaEscolhido){
             case 1:
-                strcpy(temasDoUsuario[numCompras], "100 Anos da Semana de Arte Moderna");
+                strcpy(ingressos[numCompras].tema[numCompras], "100 Anos da Semana de Arte Moderna");
+                strcpy(ingressos[numCompras].status[numCompras], "Ativo");
                 numCompras++;
             break;
 
             case 2:
-                strcpy(temasDoUsuario[numCompras], "150 anos de Santos Dumont");
+                strcpy(ingressos[numCompras].tema[numCompras], "150 anos de Santos Dumont");
+                strcpy(ingressos[numCompras].status[numCompras], "Ativo");
                 numCompras++;
             break;
 
             case 3:
-                strcpy(temasDoUsuario[numCompras], "Jogos Olímpicos de Paris 2024");
+                strcpy(ingressos[numCompras].tema[numCompras], "Jogos Olímpicos de Paris 2024");
+                strcpy(ingressos[numCompras].status[numCompras], "Ativo");
                 numCompras++;
             break;
 
             case 4:
-                strcpy(temasDoUsuario[numCompras], "Copa do Mundo Qatar 2022");
+                strcpy(ingressos[numCompras].tema[numCompras], "Copa do Mundo Qatar 2022");
+                strcpy(ingressos[numCompras].status[numCompras], "Ativo");
                 numCompras++;
             break;
 
             case 5:
                 if(numCompras == 0){
-                    printf("Você não escolheu nenhum tema!\n");
-                    system("pause");
+                    printf("Por favor, escolha um tema!\n");
+                    getch();
                     venda_bilhete();
                 }else{
                     printf("Você será direcionado ao pagamento\n\n");
@@ -83,8 +88,8 @@ void venda_bilhete() {
             break;
 
             default:
-                printf("Opção Inválida!\n");
-                system("pause");
+                printf("Opção Inválida! Escolha uma opção entre 1 e 4.\n");
+                getch();
                 venda_bilhete();
             break;
         }
@@ -120,7 +125,7 @@ void pagamento_bilhete(){
     printf("Meia-Entrada: estudantes que apresentarem a carteirinha, PcD ou idoso (a partir de 60 anos).\n");
     printf("Entrada Gratuita: somente nas terças e quintas.\n");
 
-    diaAleatorio =  4;  //rand() % 7;
+    diaAleatorio = rand() % 7;
     printf("\nHoje é %s.\n", diasDaSemana[diaAleatorio]);
 
    switch (diaAleatorio) {
@@ -213,23 +218,18 @@ void gerarCod_bilhete(int pagamentoRealizado, int entradaGratuita) {
             codigo[3] = '0' + numeros[rand() % 10];
             codigo[4] = '\0';
 
-            ingressos[i].numBilhete = i+1;
-            strcpy(ingressos[i].nome, nomeUsuario);
-            ingressos[i].idade = idadeUsuario;
-            strncpy(ingressos[i].tema, temasDoUsuario[i], sizeof(ingressos[i].tema) - 1);
-            ingressos[i].tema[sizeof(ingressos[i].tema) - 1] = '\0';
-            strcpy(ingressos[i].codigoBilhete, codigo);
-            strcpy(ingressos[i].status, "Ativo");
+            strcpy(ingressos[i].codigoBilhete[i], codigo);
 
             printf("\nBilhete: %d\n", i+1);
-            printf("Nome: %s\n", ingressos[i].nome);
-            printf("Idade: %d\n", ingressos[i].idade);
-            printf("Tema: %s\n", ingressos[i].tema);
-            printf("Código: %s\n", ingressos[i].codigoBilhete);
+            printf("Nome: %s\n", ingressos[0].nome);
+            printf("Idade: %d\n", ingressos[0].idade);
+            printf("Tema: %s\n", ingressos[i].tema[i]);
+            printf("Código: %s\n", ingressos[i].codigoBilhete[i]);
+            printf("Status: %s\n", ingressos[i].status[i]);
 
             fprintf(bilhetes, "%s; %d; %s; %s; %s\n",
-            ingressos[i].nome, ingressos[i].idade, ingressos[i].tema, 
-            ingressos[i].codigoBilhete, ingressos[i].status);
+            ingressos[0].nome, ingressos[0].idade, ingressos[i].tema[i], 
+            ingressos[i].codigoBilhete[i], ingressos[i].status[i]);
 
     }
     }
