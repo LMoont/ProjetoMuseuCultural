@@ -5,10 +5,11 @@
 #include <locale.h>
 #include "bilheteria.h"
 #include "entrada_temas.h"
+#include "exibir_tema.h"
 
 int main ()
 {
-    system("color 1F");
+    //system("color 1F");
     setlocale(LC_ALL, "Portuguese");
 
     printf("\n=============================================================\n");
@@ -24,12 +25,13 @@ int main ()
     printf("Uma homenagem ao 150º aniversário de Alberto Santos-Dumont, pioneiro da aviação e inventor \nbrasileiro, cujas realizações revolucionaram a história da aviação.\n");
 
     printf("\nJogos Olímpicos de Paris 2024:\n");
-    printf("Refere-se à próxima edição dos Jogos Olímpicos de Verão que ocorrerão em Paris, França, em 2024.\n\n");
+    printf("Próxima edição dos Jogos Olímpicos de Verão que ocorrerão em Paris, França, em 2024.\n\n");
 
     venda_bilhete();
     pagamento_bilhete();
     entradaTema();
+    system("cls");
+    exibirArteModrn();
 
     return 0;
 }
-

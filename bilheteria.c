@@ -33,12 +33,10 @@ void venda_bilhete() {
     printf("Você possui alguma deficiência? (S / N): ");
     scanf(" %c", &pcd);
 
-    while (getchar() != '\n');
 
-    if (pcd != 's' && pcd != 'n'){
-        printf("\nOpção Inválida!\n\n");
-        getch();
-        venda_bilhete();
+    while (pcd != 's' && pcd != 'n'){
+        printf("\nOpção inválida! por favor digite S (Sim) ou N (Não): ");
+        scanf(" %c", &pcd);
     }
 
     printf("\nEscolha o tema que deseja visitar:\n");

@@ -6,10 +6,6 @@
 void validaBilhete();
 void alterarStatusBilhete();
 void entradaTema();
-void EntradaArteModrn();
-void EntradaSantosDmnt();
-void EntradaParis2024();
-void EntradaQatar2022();
 
 extern char validarTema[40];
 
