@@ -7,8 +7,8 @@
 #include <math.h>
 
 void questCopaCatar();
-
 void centralizarTexto();
+void menuEntrada();
 
 void menuCopaCatar(){
     setlocale(LC_ALL, "Portuguese");
@@ -33,7 +33,8 @@ void menuCopaCatar(){
     printf("\n\n\t\t\t\t============== Copa do Mundo Catar 2022 =============\n\n\n\n");
 
     printf("\t\t\t\tEscolha uma opção para explorar cada tópico e responda um pequeno\n\t\t\t\tquestionário para testar seus conhecimentos e avaliar a exposição:\n\n");
-    printf("\t\t\t\t1 - Preparação e Infraestrutura\n\t\t\t\t2 - Final Histórica\n\t\t\t\t3 - Aspecto Social e Cultural do País\n\t\t\t\t4 - Sustentabilidade e Legado Ambiental\n\t\t\t\t5 - Questionário e Avaliação do Tema\n\t\t\t\t0 - Sair\n\n\t\t\t\tOpção: ");
+    printf("\t\t\t\t1 - Preparação e Infraestrutura\n\t\t\t\t2 - Final Histórica\n\t\t\t\t3 - Aspecto Social e Cultural do País\n\t\t\t\t4 - Sustentabilidade e Legado Ambiental\n\t\t\t\t5 - Questionário e Avaliação do Tema\n\t\t\t\t6 - Voltar\n");
+    printf("\n\t\t\t\tOpção: ");
     scanf("%d", &op);
 
     switch (op){
@@ -93,14 +94,15 @@ void menuCopaCatar(){
             system("cls");
             menuCopaCatar();
             break;
-        case 0:
+        case 6:
             printf("\n\t\t\t\tObrigado pela visita!");
             getch();
-            exit(0);
+            system("cls");
+            menuEntrada();
             break;
 
         default:
-                printf("\n\t\t\t\tOpção inválida! por favor escolha uma opção entre 1 e 5 ou 0 para sair.\n\n");
+                printf("\n\t\t\t\tOpção inválida! por favor escolha uma opção entre 1 e 5 ou 6 para voltar.\n\n");
                 system("pause");
                 system("cls");
                 menuCopaCatar();
@@ -145,7 +147,7 @@ void questCopaCatar(){
 
             case 'c':
             case 'C':
-                printf("\t\t\t\tVocê Acertou!!!");
+                printf("\t\t\t\tResposta Correta!!!");
                 pontuacao++;
                 respostaValida = 1;
                 break;
@@ -180,7 +182,7 @@ void questCopaCatar(){
 
             case 'b':
             case 'B':
-                printf("\t\t\t\tVocê Acertou!!!");
+                printf("\t\t\t\tResposta Correta!!!");
                 respostaValida = 1;
                 pontuacao++;
             break;
@@ -220,7 +222,7 @@ void questCopaCatar(){
 
             case 'b':
             case 'B':
-                printf("\t\t\t\tVocê Acertou!!!");
+                printf("\t\t\t\tResposta Correta!!!");
                 respostaValida = 1;
                 pontuacao++;
             break;

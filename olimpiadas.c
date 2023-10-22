@@ -7,7 +7,7 @@
 #include <math.h>
 
 void questOlimpiadas();
-
+void menuEntrada();
 void centralizarTexto();
 
 void menuOlimpiadas(){
@@ -33,7 +33,8 @@ void menuOlimpiadas(){
     printf("\n\n\t\t\t\t============== Jogos Olímpicos de Paris 2024 =============\n\n\n\n");
 
     printf("\t\t\t\tEscolha uma opção para explorar cada tópico e responda um pequeno\n\t\t\t\tquestionário para testar seus conhecimentos e avaliar a exposição:\n\n");
-    printf("\t\t\t\t1 - Infraestrutura e Preparação\n\t\t\t\t2 - As 5 Modalidades Estreantes\n\t\t\t\t3 - Legado Social, Cultural e Econômico\n\t\t\t\t4 - Expectativas do Brasil nas Olimpíadas\n\t\t\t\t5 - Questionário e Avaliação do Tema\n\t\t\t\t0 - Sair\n\n\t\t\t\tOpção: ");
+    printf("\t\t\t\t1 - Infraestrutura e Preparação\n\t\t\t\t2 - As 5 Modalidades Estreantes\n\t\t\t\t3 - Legado Social, Cultural e Econômico\n\t\t\t\t4 - Expectativas do Brasil nas Olimpíadas\n\t\t\t\t5 - Questionário e Avaliação do Tema\n\t\t\t\t6 - Voltar\n");
+    printf("\n\t\t\t\tOpção:");
     scanf("%d", &op);
 
     switch (op){
@@ -93,14 +94,16 @@ void menuOlimpiadas(){
             system("cls");
             menuOlimpiadas();
             break;
-        case 0:
+       
+        case 6:
             printf("\n\t\t\t\tObrigado pela visita!");
             getch();
-            exit(0);
+            system("cls");
+            menuEntrada();
             break;
 
         default:
-                printf("\n\t\t\t\tOpção inválida! por favor escolha uma opção entre 1 e 5 ou 0 para sair.\n\n");
+                printf("\n\t\t\t\tOpção inválida! por favor escolha uma opção entre 1 e 5 ou 6 para voltar.\n\n");
                 system("pause");
                 system("cls");
                 menuOlimpiadas();
@@ -145,7 +148,7 @@ void questOlimpiadas(){
 
             case 'c':
             case 'C':
-                printf("\t\t\t\tVocê Acertou!!!");
+                printf("\t\t\t\tResposta Correta!!!");
                 pontuacao++;
                 respostaValida = 1;
                 break;
@@ -164,7 +167,7 @@ void questOlimpiadas(){
     }
 
     printf("\n\n\t\t\t\t2 - Quais são os pontos de referência destacados como parte do palco memorável\n\t\t\t\tpara os atletas nos Jogos Olímpicos de Paris 2024?\n\n");
-    printf("\t\t\t\ta) Rio Sena e a Vila Olímpica.\n\t\t\t\tb) Avenida Champs-Élysées e a Catedral de Notre-Dame.\n\t\t\t\tc) Praça da Concórdia e o Museu do Louvre.\n\t\t\t\td) Palácio de Versalhes e o Arco do Triunfo.\n\n");
+    printf("\t\t\t\ta) Rio Sena e a Vila Olímpica.\n\t\t\t\tb) Avenida Champs-Élysées e a Catedral de Notre-Dame.\n\t\t\t\tc) Praía da Concordia e o Museu do Louvre.\n\t\t\t\td) Palacio de Versalhes e o Arco do Triunfo.\n\n");
     printf("\t\t\t\tResp: ");
     scanf(" %c", &resp);
     getchar();
@@ -174,7 +177,7 @@ void questOlimpiadas(){
         switch (resp){
             case 'a':
             case 'A':
-                printf("\t\t\t\tVocê Acertou!!!");
+                printf("\t\t\t\tResposta Correta!!!");
                 respostaValida = 1;
                 pontuacao++;
             break;
@@ -193,7 +196,7 @@ void questOlimpiadas(){
 
             case 'd':
             case 'D':
-                printf("\t\t\t\tResposta Errada!\n\t\t\t\tResposta Correta: a) Rio Sena e a Vila Olímpica.");
+                printf("\t\t\t\tResposta Errada!\n\t\t\t\tResposta Correta: a) Rio Sena e a Vila Olimpica.");
                 respostaValida = 1;
             break;
 
@@ -205,7 +208,7 @@ void questOlimpiadas(){
     }
 
     printf("\n\n\t\t\t\t3 - Qual é um dos pilares principais dos Jogos Olímpicos de Paris 2024?\n\n");
-    printf("\t\t\t\ta) Desenvolvimento industrial.\n\t\t\t\tb) Promoção cultural.\n\t\t\t\tc) Expansão militar.\n\t\t\t\td) Exploração espacial.\n\n");
+    printf("\t\t\t\ta) Desenvolvimento industrial.\n\t\t\t\tb) Promoção cultural.\n\t\t\t\tc) Expansão militar.\n\t\t\t\td) Exploraçao espacial.\n\n");
     printf("\t\t\t\tResp: ");
     scanf(" %c", &resp);
 
@@ -220,7 +223,7 @@ void questOlimpiadas(){
 
             case 'b':
             case 'B':
-                printf("\t\t\t\tVocê Acertou!!!");
+                printf("\t\t\t\tResposta Correta!!!");
                 respostaValida = 1;
                 pontuacao++;
             break;

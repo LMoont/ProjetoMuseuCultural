@@ -7,6 +7,7 @@
 #include <math.h>
 
 void questArteModrn();
+void menuEntrada();
 
 void centralizarTexto(char *texto) {
     printf("\t%s", texto);
@@ -35,8 +36,9 @@ void menuArteModrn(){
 
     printf("\n\n\t\t\t\t============== 100 Anos da Semana de Arte Moderna =============\n\n\n\n");
 
-    printf("\t\t\t\tEscolha uma opï¿½ï¿½o para explorar cada tï¿½pico e responda um pequeno\n\t\t\t\tquestionï¿½rio sobre o tema para testar seus conhecimentos:\n\n");
-    printf("\t\t\t\t1 - Contexto Histï¿½rico e Cultural\n\t\t\t\t2 - Participantes e Obras Marcantes\n\t\t\t\t3 - Influï¿½ncias e Repercussï¿½es no Cenï¿½rio Artï¿½stico Brasileiro\n\t\t\t\t4 - Relevancia e Legado\n\t\t\t\t5 - Questionï¿½rio e Avaliaï¿½ï¿½o do Tema\n\t\t\t\t0 - Sair\n\n\t\t\t\tOpï¿½ï¿½o: ");
+    printf("\t\t\t\tEscolha uma opção para explorar cada tópico e responda um pequeno\n\t\t\t\tquestionário sobre o tema para testar seus conhecimentos:\n\n");
+    printf("\t\t\t\t1 - Contexto Histórico e Cultural\n\t\t\t\t2 - Participantes e Obras Marcantes\n\t\t\t\t3 - Influências e Repercussóes no Cenário Artístico Brasileiro\n\t\t\t\t4 - Relevância e Legado\n\t\t\t\t5 - Questionário e Avaliação do Tema\n\t\t\t\t6 - Voltar\n");
+    printf("\n\t\t\t\tOpção: ");
     scanf("%d", &op);
 
     switch (op){
@@ -50,7 +52,6 @@ void menuArteModrn(){
             getch();
             system("cls");
             menuArteModrn();
-
             break;
 
         case 2:
@@ -97,14 +98,15 @@ void menuArteModrn(){
             system("cls");
             menuArteModrn();
             break;
-        case 0:
+        case 6:
             printf("\n\t\t\t\tObrigado pela visita!");
             getch();
-            exit(0);
+            system("cls");
+            menuEntrada();
             break;
 
         default:
-            printf("\n\t\t\t\tOpÃ§Ã£o invÃ¡lida! por favor escolha uma opÃ§Ã£o entre 1 e 5 ou 0 para sair.\n\n");
+            printf("\n\t\t\t\tOpção inválida! por favor escolha uma opção entre 1 e 5 ou 6 para voltar.\n\n");
             system("pause");
             system("cls");
             menuArteModrn();
@@ -119,7 +121,7 @@ void menuArteModrn(){
 
 void questArteModrn(){
 
-    char resp;
+    char resp, input[100];
     int pontuacao = 0;
     int respostaValida = 0, qtd = 0, qtdAnterior, qtdNova;
     float avaliacao, recomendacao; 
@@ -129,7 +131,7 @@ void questArteModrn(){
     printf("\n\n\t\t\t\t================ Teste seu Conhecimento ===============\n\n\n\n");
 
     printf("\t\t\t\t1 - Em que cidade ocorreu a Semana de Arte Moderna em 1922?\n\n");
-    printf("\t\t\t\ta)Belo Horizonte\n\t\t\t\tb)Rio de Janeiro\n\t\t\t\tc)Sï¿½o Paulo\n\t\t\t\td)Salvador\n\n");
+    printf("\t\t\t\ta) Belo Horizonte\n\t\t\t\tb) Rio de Janeiro\n\t\t\t\tc) São Paulo\n\t\t\t\td) Salvador\n\n");
     printf("\t\t\t\tResp: ");
     scanf(" %c", &resp); 
 
@@ -137,38 +139,38 @@ void questArteModrn(){
         switch (resp) {
             case 'a':
             case 'A':
-                printf("\t\t\t\tResposta Errada!\n\t\t\t\tResposta Correta: c)Sï¿½o Paulo.");
+                printf("\t\t\t\tResposta Errada!\n\t\t\t\tResposta Correta: c) São Paulo.");
                 respostaValida = 1;
                 break;
 
             case 'b':
             case 'B':
-                printf("\t\t\t\tResposta Errada!\n\t\t\t\tResposta Correta: c)Sï¿½o Paulo.");
+                printf("\t\t\t\tResposta Errada!\n\t\t\t\tResposta Correta: c) São Paulo.");
                 respostaValida = 1;
                 break;
 
             case 'c':
             case 'C':
-                printf("\t\t\t\tVocï¿½ Acertou!!!");
+                printf("\t\t\t\tResposta Correta!!!");
                 pontuacao++;
                 respostaValida = 1;
                 break;
 
             case 'd':
             case 'D':
-                printf("\t\t\t\tResposta Errada!\n\t\t\t\tResposta Correta: c)Sï¿½o Paulo.");
+                printf("\t\t\t\tResposta Errada!\n\t\t\t\tResposta Correta: c) São Paulo.");
                 respostaValida = 1;
                 break;
 
             default:
-                printf("\n\t\t\t\tOpï¿½ï¿½o invï¿½lida! por favor escolha uma alternativa vï¿½lida: ");
+                printf("\n\t\t\t\tOpção inválida! por favor escolha uma alternativa válida: ");
                 scanf(" %c", &resp);
                 break;
         }
     }
 
     printf("\n\n\t\t\t\t2 - Qual foi um dos principais objetivos da Semana de Arte Moderna?\n\n");
-    printf("\t\t\t\ta)Romper com o academicismo vigente na arte brasileira\n\t\t\t\tb)Incentivar a segregaï¿½ï¿½o das manifestaï¿½ï¿½es populares e regionais\n\t\t\t\tc)Introduzir as tï¿½cnicas de pintura renascentista nas produï¿½ï¿½es artï¿½sticas\n\t\t\t\td)Promover a venda de obras de arte moderna exclusivamente para a elite brasileira\n\n");
+    printf("\t\t\t\ta) Romper com o academicismo vigente na arte brasileira\n\t\t\t\tb) Incentivar a segregação das manifestações populares e regionais\n\t\t\t\tc) Introduzir as técnicas de pintura renascentista nas produções artísticas\n\t\t\t\td) Promover a venda de obras de arte moderna exclusivamente para a elite brasileira\n\n");
     printf("\t\t\t\tResp: ");
     scanf(" %c", &resp);
     getchar();
@@ -178,7 +180,7 @@ void questArteModrn(){
         switch (resp){
             case 'a':
             case 'A':
-                printf("\t\t\t\tVocï¿½ Acertou!!!");
+                printf("\t\t\t\tResposta Correta!!!");
                 respostaValida = 1;
                 pontuacao++;
             break;
@@ -202,14 +204,14 @@ void questArteModrn(){
             break;
 
             default:
-                printf("\n\t\t\t\tOpï¿½ï¿½o invï¿½lida! por favor escolha uma alternativa vï¿½lida: ");
+                printf("\n\t\t\t\tOpção inválida! por favor escolha uma alternativa válida: ");
                 scanf(" %c", &resp);
                 break;;
         }
     }
 
-    printf("\n\n\t\t\t\t3 - Qual foi a reaï¿½ï¿½o inicial do pï¿½blico em relaï¿½ï¿½o ï¿½s obras e performances\n\t\t\t\tapresentadas?\n\n");
-    printf("\t\t\t\ta)Aceitaï¿½ï¿½o imediata e entusiasmo generalizado\n\t\t\t\tb)Aplausos unï¿½nimes e apoio incondicional\n\t\t\t\tc)Ressentimentos e rejeiï¿½ï¿½es intensas\n\t\t\t\td)Indiferenï¿½a e falta de interesse\n\n");
+    printf("\n\n\t\t\t\t3 - Qual foi a reação inicial do público em relação às obras e performances\n\t\t\t\tapresentadas?\n\n");
+    printf("\t\t\t\ta) Aceitação imediata e entusiasmo generalizado\n\t\t\t\tb) Aplausos unânimes e apoio incondicional\n\t\t\t\tc) Ressentimentos e rejeições intensas\n\t\t\t\td) Indiferençaa e falta de interesse\n\n");
     printf("\t\t\t\tResp: ");
     scanf(" %c", &resp);
 
@@ -218,31 +220,31 @@ void questArteModrn(){
         switch (resp){
             case 'a':
             case 'A':
-                printf("\t\t\t\tResposta Errada!\n\t\t\t\tResposta Correta: c)Ressentimento e rejeiï¿½ï¿½o intensos.");
+                printf("\t\t\t\tResposta Errada!\n\t\t\t\tResposta Correta: c)Ressentimentos e rejeições intensas.");
                 respostaValida = 1;
             break;
 
             case 'b':
             case 'B':
-                printf("\t\t\t\tResposta Errada!\n\t\t\t\tResposta Correta: c)Ressentimento e rejeiï¿½ï¿½o intensos.");
+                printf("\t\t\t\tResposta Errada!\n\t\t\t\tResposta Correta: c)Ressentimentos e rejeições intensas.");
                 respostaValida = 1;
             break;
 
             case 'c':
             case 'C':
-                printf("\t\t\t\tVocï¿½ Acertou!!!");
+                printf("\t\t\t\tResposta Correta!!!");
                 respostaValida = 1;
                 pontuacao++;
             break;
 
             case 'd':
             case 'D':
-                printf("\t\t\t\tResposta Errada!\n\t\t\t\tResposta Correta: c)Ressentimento e rejeiï¿½ï¿½o intensos.");
+                printf("\t\t\t\tResposta Errada!\n\t\t\t\tResposta Correta: c)Ressentimentos e rejeições intensas.");
                 respostaValida = 1;
             break;
 
             default:
-                printf("\n\t\t\t\tOpï¿½ï¿½o invï¿½lida! por favor escolha uma alternativa vï¿½lida: ");
+                printf("\n\t\t\t\tOpção inválida! por favor escolha uma alternativa válida: ");
                 scanf(" %c", &resp);
                 break;
         }
@@ -251,25 +253,39 @@ void questArteModrn(){
     printf("\n\n\t\t\t\tPontuacao Total: %d/3\n", pontuacao);
 
     if(pontuacao == 3){
-        printf("\n\n\t\t\t\tParabï¿½ns, vocï¿½ acertou todas!!!");
+        printf("\n\n\t\t\t\tParabéns, você acertou todas!!!");
     }
     
     printf("\n\n");
     system("pause");
     system("cls");
 
-    printf("\n\n\t\t\t\t================ Avalie sua Experiï¿½ncia ===============\n\n\n\n");
+    printf("\n\n\t\t\t\t================ Avalie sua Experiência ===============\n\n\n\n");
 
-    printf("\t\t\t\tDe 0 a 10, qual a sua avaliaï¿½ï¿½o quanto a qualidade da\n\t\t\t\texposiï¿½ï¿½o e organizaï¿½ï¿½o da obra?\n\n");
+    printf("\t\t\t\tDe 0 a 10, qual a sua avaliação quanto a qualidade da\n\t\t\t\texposição e organização da obra?\n\n");
     printf("\t\t\t\tResp: ");
-    scanf("%f", &avaliacao);
 
-    printf("\n\n\t\t\t\tDe 0 a 10, qual a chance de vocï¿½ recomendar a um amigo\n\t\t\t\ta visita a esta exposiï¿½ï¿½o?\n\n");
+     while (1) {
+        fgets(input, sizeof(input), stdin);
+        if (sscanf(input, "%f", &avaliacao) == 1 && avaliacao >= 0 && avaliacao <= 10) {
+            break;
+        }
+        printf("\n\n\t\t\t\tOpção inválida! por favor avalie com um numero entre 0 e 10: ");
+    }
+
+    printf("\n\n\t\t\t\tDe 0 a 10, qual a chance de você recomendar a um amigo\n\t\t\t\ta visita a esta exposição?\n\n");
     printf("\t\t\t\tResp: ");
-    scanf("%f", &recomendacao);
+
+     while (1) {
+        fgets(input, sizeof(input), stdin);
+        if (sscanf(input, "%f", &recomendacao) == 1 && recomendacao >= 0 && recomendacao <= 10) {
+            break;
+        }
+        printf("\n\n\t\t\t\tOpção inválida! por favor avalie com um numero entre 0 e 10: ");
+    }
     qtd++;
 
-    printf("\n\n\t\t\t\tObrigado pela avaliaï¿½ï¿½o :)");
+    printf("\n\n\t\t\t\tObrigado pela avaliação :)");
 
     percentual = (pontuacao/3.0)*100;
 
@@ -328,11 +344,11 @@ void questArteModrn(){
         exit(1);
     }
     
-    fprintf(resultadosArteModrn, "Anï¿½lise dos Resultados:\nQuantidade questionï¿½rios;%d\nPercentual de acertos;%.2f%%\nMï¿½dia da avaliaï¿½ï¿½o;%.2f\nMï¿½dia da recomendaï¿½ï¿½o;%.2f", qtdNova, novoPercentual, mdNovaAvaliacao, mdNovaRecomenda);
+    fprintf(resultadosArteModrn, "Análise dos Resultados:\nQuantidade questionários;%d\nPercentual de acertos;%.2f%%\nMédia da avaliação;%.2f\nMédia da recomendação;%.2f", qtdNova, novoPercentual, mdNovaAvaliacao, mdNovaRecomenda);
     
-    printf("\t\t\t\tQuantidade Avaliaï¿½ï¿½es: %d\n", qtdNova);
-    printf("\t\t\t\tPercentual de acertos do questionï¿½rio: %.2f%%\n", novoPercentual);
-    printf("\t\t\t\tNota mï¿½dia dos visitantes: %.2f\n", mdNovaAvaliacao);
+    printf("\t\t\t\tQuantidade Avaliações: %d\n", qtdNova);
+    printf("\t\t\t\tPercentual de acertos do questionário: %.2f%%\n", novoPercentual);
+    printf("\t\t\t\tNota média dos visitantes: %.2f\n", mdNovaAvaliacao);
 
     fclose(resultadosArteModrn);
 }
