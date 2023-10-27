@@ -19,14 +19,13 @@ char codigo[5], pcd;
 int pagamentoRealizado = 0;
 
 void dadosUsuario() {
-    setlocale(LC_ALL, "Portuguese");
 
     int i;
     int op;
 
-    printf("\n\n\t\t\t\t======================= BILHETERIA ======================\n\n");
+    printf("\n\n\n\t\t\t\t======================= BILHETERIA ======================\n\n\n");
 
-    printf("\n\t\t\t\tInsira as informações solicitadas antes de escolher o tema.\n\n");
+    printf("\n\t\t\t\tInsira as informações solicitadas antes de escolher o tema.\n\n\n");
 
     printf("\t\t\t\tNome: ");
     gets(nomeUsuario);
@@ -65,14 +64,14 @@ void escolhaTema(){
     int i;
     char op = 's';
 
-    printf("\n\n\t\t\t\t============== BILHETERIA =============\n\n");
+    printf("\n\n\t\t\t\t============== BILHETERIA =============\n\n\n");
 
-    printf("\n\t\t\t\tEscolha o tema que deseja visitar:\n");
+    printf("\n\t\t\t\tEscolha o tema que deseja visitar:\n\n");
 
         printf("\n\t\t\t\t1 - 100 ANOS DA SEMANA DE ARTE MODERNA\n");
-        printf("\t\t\t\t2 - 150 ANOS DE SANTOS DUMONT\n");
-        printf("\t\t\t\t3 - JOGOS OLIMPICOS PARIS 2024\n");
-        printf("\t\t\t\t4 - COPA DO MUNDO CATAR 2022\n\n");
+        printf("\n\t\t\t\t2 - 150 ANOS DE SANTOS DUMONT\n");
+        printf("\n\t\t\t\t3 - JOGOS OLIMPICOS PARIS 2024\n");
+        printf("\n\t\t\t\t4 - COPA DO MUNDO CATAR 2022\n\n");
         printf("\t\t\t\tOpção: ");
         scanf("%d", &temaEscolhido);
 
@@ -121,45 +120,44 @@ void escolhaTema(){
             break;
     }
 
-    printf("\n\t\t\t\tTema(s) escolhido(s):\n");
+    printf("\n\t\t\t\tTema(s) escolhido(s):\n\n");
 
     for(i=0; i<numCompras; i++){
         printf("\t\t\t\t%s\n", temasDoUsuario[i]);
     }
 
     do{
-    printf("\n\t\t\t\tDeseja adquirir mais ingressos? (S / N): ");
+    printf("\n\t\t\t\tDeseja adquirir mais ingressos? (s/n): ");
     scanf(" %c", &op);
-    if (op == 's' || op == 'S') {
-        system("cls");
-        escolhaTema();
-    }else if(op == 'n' || op == 'N'){
-        printf("\n\n\t\t\t\tVocê será direcionado ao pagamento!\n\n");
-        system("pause");
-        system("cls");
-        pagamento();
+        if (op == 's' || op == 'S') {
+            system("cls");
+            escolhaTema();
+        }else if(op == 'n' || op == 'N'){
+            printf("\n\n\t\t\t\tVocê será direcionado ao pagamento!\n\n\n");
+            system("pause");
+            system("cls");
+            pagamento();
+        }
+    }while(op != 's' && op != 'S' && op != 'n' && op != 'N');
     }
-}while(op != 's' && op != 'S' && op != 'n' && op != 'N');
-}
 
 void pagamento(){
-    setlocale(LC_ALL, "Portuguese");
     srand(time(NULL));
 
     char carterinhaEstudante, formaPagamento;
     int diaAleatorio, entradaGratuita;
-    float valorIngresso = 50, meiaEntrada = 25, totalPagar;
+    float valorIngresso = 30, meiaEntrada = 15, totalPagar;
     char *diasDaSemana[] = {"Domingo", "Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira", "Sábado"};
 
-    printf("\n\n\t\t\t\t============== BILHETERIA =============\n\n");
+    printf("\n\n\n\t\t\t\t================= BILHETERIA ================\n\n\n\n");
     
     diaAleatorio = rand() % 7;
-    printf("\n\t\t\t\tHoje é %s.\n", diasDaSemana[diaAleatorio]);
+    printf("\n\t\t\t\tHoje é %s.\n\n", diasDaSemana[diaAleatorio]);
 
    switch (diaAleatorio) {
     case 2:
     case 4:
-        printf("\n\t\t\t\tA entrada é gratuita hoje!\n\n");
+        printf("\n\t\t\t\tA entrada é gratuita!\n\n");
         entradaGratuita = 1;
         pagamentoRealizado = 1;
     default:
@@ -170,14 +168,14 @@ void pagamento(){
             printf("\n\t\t\t\tTem direito a meia-entrada devido a idade.\n\n");
             totalPagar = numCompras * meiaEntrada;
             printf("\n\t\t\t\tTotal a Pagar: R$%.2f\n", totalPagar);
-        } else if (pcd == 2) {
+        } else if (pcd == 's' || pcd == 'S') {
             printf("\n\t\t\t\tTem direito a meia-entrada devido a ser PcD.\n");
             totalPagar = numCompras * meiaEntrada;
             printf("\n\t\t\t\tTotal a Pagar: R$%.2f\n", totalPagar);
         } else {
             while (carterinhaEstudante != 's' && carterinhaEstudante != 'S' &&
                     carterinhaEstudante != 'n' && carterinhaEstudante != 'N') {
-                printf("\n\t\t\t\tPossui carteirinha de estudante? (S / N): ");
+                printf("\n\t\t\t\tPossui carteirinha de estudante? (s/n): ");
                 scanf(" %c", &carterinhaEstudante);
         }
         
@@ -192,7 +190,7 @@ void pagamento(){
                 case 'N':
                     printf("\n\t\t\t\tNão tem direito a meia-entrada!\n");
                     totalPagar = numCompras * valorIngresso;
-                    printf("\n\t\t\t\tTotal a Pagar: R$%.2f\n", totalPagar);
+                    printf("\n\t\t\t\tTotal a Pagar: R$%.2f\n\n", totalPagar);
                     break;
                 default:
                     printf("\n\t\t\t\tOpção Inválida!\n");
@@ -200,12 +198,14 @@ void pagamento(){
         }
     }
 
+    printf("\n\t\t\t\t---------------------------------------------\n\n");
+
             if(entradaGratuita != 1){
                 while ((formaPagamento != '1') && (formaPagamento != '2') && (formaPagamento != '3')) {
-                    printf("\n\t\t\t\tQual a forma de pagamento?\n");
-                    printf("\t\t\t\t1 - Cartão de Crédito\n");
-                    printf("\t\t\t\t2 - Dinheiro\n");
-                    printf("\t\t\t\t3 - Pix\n");
+                    printf("\n\t\t\t\tQual a forma de pagamento?\n\n");
+                    printf("\t\t\t\t1 - Cartão de Crédito\n\n");
+                    printf("\t\t\t\t2 - Dinheiro\n\n");
+                    printf("\t\t\t\t3 - Pix\n\n");
                     printf("\n\t\t\t\tOpção: ");
                     scanf("%s", &formaPagamento);
 
@@ -214,7 +214,7 @@ void pagamento(){
                         case '2':
                         case '3':
                             pagamentoRealizado = 1;
-                            printf("\n\t\t\t\tPagamento realizado com sucesso!\n\n");
+                            printf("\n\t\t\t\tPagamento realizado com sucesso!\n\n\n");
                             break;
                         default:
                             printf("\n\t\t\t\tDigite uma opção válida!\n");
@@ -222,7 +222,7 @@ void pagamento(){
                     }
                 }
             
-        
+        printf("\n\n\n");
         system("pause");
         system("cls");
         gerarCod(pagamentoRealizado, entradaGratuita);
@@ -230,12 +230,8 @@ void pagamento(){
 
 void gerarCod(int pagamentoRealizado, int entradaGratuita) {
     int i;
-    char letras[26] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    int numeros[10] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
 
-    printf("\n\n\t\t\t\t============== BILHETERIA =============\n\n");
-    
-    srand(time(NULL));
+    printf("\n\n\n\t\t\t\t================= BILHETERIA ================\n\n\n\n");
 
     FILE *bilhetes;
     bilhetes = fopen("bilhetes.txt", "wb");
@@ -245,6 +241,11 @@ void gerarCod(int pagamentoRealizado, int entradaGratuita) {
         getch();
         exit(1);
     }
+
+    srand(time(NULL));
+
+    char letras[26] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    int numeros[10] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
 
     for(i = 0; i < numCompras; i++) { 
         if(pagamentoRealizado){
@@ -263,16 +264,10 @@ void gerarCod(int pagamentoRealizado, int entradaGratuita) {
             printf("\t\t\t\tCódigo: %s\n", ingressos[i].codigoBilhete);
             printf("\t\t\t\tStatus: %s\n", ingressos[i].status);
 
-            // fprintf(bilhetes, "%s; %d; %s; %s; %s\n",
-            // ingressos[0].nome, ingressos[0].idade, ingressos[i].tema[i], 
-            // ingressos[i].codigoBilhete[i], ingressos[i].status[i]);
-
             fwrite(&ingressos[i], sizeof(struct Registros), numCompras, bilhetes);
 
     }
     }
-
-    
 
     if(pagamentoRealizado){
         printf("\n\t\t\t\tTodos os bilhetes foram gerados com sucesso!\n");

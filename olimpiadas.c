@@ -30,11 +30,11 @@ void menuOlimpiadas(){
         exit(1);
     }
 
-    printf("\n\n\t\t\t\t============== Jogos Olímpicos de Paris 2024 =============\n\n\n\n");
+    printf("\n\n\n\t\t\t\t================== Jogos Olímpicos de Paris 2024 =================\n\n\n\n");
 
-    printf("\t\t\t\tEscolha uma opção para explorar cada tópico e responda um pequeno\n\t\t\t\tquestionário para testar seus conhecimentos e avaliar a exposição:\n\n");
-    printf("\t\t\t\t1 - Infraestrutura e Preparação\n\t\t\t\t2 - As 5 Modalidades Estreantes\n\t\t\t\t3 - Legado Social, Cultural e Econômico\n\t\t\t\t4 - Expectativas do Brasil nas Olimpíadas\n\t\t\t\t5 - Questionário e Avaliação do Tema\n\t\t\t\t6 - Voltar\n");
-    printf("\n\t\t\t\tOpção:");
+    printf("\t\t\t\tEscolha uma opção para explorar cada tópico e responda um pequeno\n\t\t\t\tquestionário para testar seus conhecimentos e avaliar a exposição:\n\n\n");
+    printf("\t\t\t\t1 - Infraestrutura e Preparação\n\n\t\t\t\t2 - As 5 Modalidades Estreantes\n\n\t\t\t\t3 - Legado Social, Cultural e Econômico\n\n\t\t\t\t4 - Expectativas do Brasil nas Olimpíadas\n\n\t\t\t\t5 - Questionário e Avaliação do Tema\n\n\t\t\t\t6 - Voltar\n\n");
+    printf("\n\t\t\t\tOpção: ");
     scanf("%d", &op);
 
     switch (op){
@@ -118,17 +118,20 @@ void menuOlimpiadas(){
 
 void questOlimpiadas(){
 
-    char resp;
+    char resp, input[5];
     int pontuacao = 0;
     int respostaValida = 0, qtd = 0, qtdAnterior, qtdNova;
     float avaliacao, recomendacao; 
     float percentual, mdPercentual, mdRecomenda, mdAvaliacao, novoPercentual, mdNovaRecomenda, mdNovaAvaliacao;
     float mdAvaliacaoAnterior, mdRecomendaAnterior, percentualAnterior;
 
-    printf("\n\n\t\t\t\t================ Teste seu Conhecimento ===============\n\n\n\n");
+    printf("\n\n\n\t\t\t\t========================= Teste seu Conhecimento ========================\n\n\n\n\n\n");
 
-    printf("\t\t\t\t1 - Qual a visão de Paris 2024 para os jogos Olímpicos?\n\n");
-    printf("\t\t\t\ta) Paris 2024 tem como objetivo montar o melhor palco para os jogos Olímpicos.\n\t\t\t\tb) Seu objetivo é dificultar o palco para não favorecer os atletas e deixar\n\t\t\t\tas competições um pouco mais difíceis.\n\t\t\t\tc) Paris 2024 tem como objetivo oferecer uma cidade inspiradora e um palco memorável\n\t\t\t\tpara os atletas.\n\t\t\t\td) Paris 2024 tem como objetivo proporcionar os melhores equipamentos para\n\t\t\t\ttodos os atletas.\n\n");
+    printf("\t\t\t\t1 - QUAL A VISÃO DE PARIS PARA OS JOGOS OLÍMPICOS 2024?\n\n\n");
+    printf("\t\t\t\ta) Paris 2024 tem como objetivo montar o melhor palco para os jogos\n\t\t\t\tOlímpicos.\n\n"); 
+    printf("\t\t\t\tb) Seu objetivo é dificultar o palco para não favorecer os atletas e\n\t\t\t\tdeixar as competições um pouco mais difíceis.\n\n");
+    printf("\t\t\t\tc) Paris 2024 tem como objetivo oferecer uma cidade inspiradora e um\n\t\t\t\tpalco memorável para os atletas.\n\n");
+    printf("\t\t\t\td) Paris 2024 tem como objetivo proporcionar os melhores equipamentos\n\t\t\t\tpara todos os atletas.\n\n");
     printf("\t\t\t\tResp: ");
     scanf(" %c", &resp); 
 
@@ -136,26 +139,26 @@ void questOlimpiadas(){
         switch (resp) {
             case 'a':
             case 'A':
-                printf("\t\t\t\tResposta Errada!\n\t\t\t\tResposta Correta: c) Paris 2024 tem como objetivo oferecer uma cidade inspiradora e um\n\t\t\t\tpalco memorávelpara os atletas.");
+                printf("\n\t\t\t\tResposta Errada!");
                 respostaValida = 1;
                 break;
 
             case 'b':
             case 'B':
-                printf("\t\t\t\tResposta Errada!\n\t\t\t\tResposta Correta: c) Paris 2024 tem como objetivo oferecer uma cidade inspiradora e um\n\t\t\t\tpalco memorável para os atletas.");
+                printf("\n\t\t\t\tResposta Errada!");
                 respostaValida = 1;
                 break;
 
             case 'c':
             case 'C':
-                printf("\t\t\t\tResposta Correta!!!");
+                printf("\n\t\t\t\tResposta Correta!!!");
                 pontuacao++;
                 respostaValida = 1;
                 break;
 
             case 'd':
             case 'D':
-                printf("\t\t\t\tResposta Errada!\n\t\t\t\tResposta Correta: c) Paris 2024 tem como objetivo oferecer uma cidade inspiradora e um\n\t\t\t\tpalco memorável para os atletas.");
+                printf("\n\t\t\t\tResposta Errada!");
                 respostaValida = 1;
                 break;
 
@@ -166,8 +169,17 @@ void questOlimpiadas(){
         }
     }
 
-    printf("\n\n\t\t\t\t2 - Quais são os pontos de referência destacados como parte do palco memorável\n\t\t\t\tpara os atletas nos Jogos Olímpicos de Paris 2024?\n\n");
-    printf("\t\t\t\ta) Rio Sena e a Vila Olímpica.\n\t\t\t\tb) Avenida Champs-Élysées e a Catedral de Notre-Dame.\n\t\t\t\tc) Praía da Concordia e o Museu do Louvre.\n\t\t\t\td) Palacio de Versalhes e o Arco do Triunfo.\n\n");
+    printf("\n\n\n");
+    system("pause");
+    system("cls");
+
+    printf("\n\n\n\t\t\t\t======================== Teste seu Conhecimento =======================\n\n\n\n\n\n");
+
+    printf("\t\t\t\t2 - Quais são os pontos de referência destacados como parte do palco\n\t\t\t\tmemorável para os atletas nos Jogos Olímpicos de Paris 2024?\n\n\n");
+    printf("\t\t\t\ta) Rio Sena e a Vila Olímpica.\n\n");
+    printf("\t\t\t\tb) Avenida Champs-Élysées e a Catedral de Notre-Dame.\n\n");
+    printf("\t\t\t\tc) Praía da Concordia e o Museu do Louvre.\n\n");
+    printf("\t\t\t\td) Palacio de Versalhes e o Arco do Triunfo.\n\n");
     printf("\t\t\t\tResp: ");
     scanf(" %c", &resp);
     getchar();
@@ -177,26 +189,26 @@ void questOlimpiadas(){
         switch (resp){
             case 'a':
             case 'A':
-                printf("\t\t\t\tResposta Correta!!!");
+                printf("\n\t\t\t\tResposta Correta!!!");
                 respostaValida = 1;
                 pontuacao++;
             break;
 
             case 'b':
             case 'B':
-                printf("\t\t\t\tResposta Errada!\n\t\t\t\tResposta Correta: a) Rio Sena e a Vila Olímpica.");
+                printf("\n\t\t\t\tResposta Errada!");
                 respostaValida = 1;
             break;
 
             case 'c':
             case 'C':
-                printf("\t\t\t\tResposta Errada!\n\t\t\t\tResposta Correta: a) Rio Sena e a Vila Olímpica.");
+                printf("\n\t\t\t\tResposta Errada!");
                 respostaValida = 1;
             break;
 
             case 'd':
             case 'D':
-                printf("\t\t\t\tResposta Errada!\n\t\t\t\tResposta Correta: a) Rio Sena e a Vila Olimpica.");
+                printf("\n\t\t\t\tResposta Errada!");
                 respostaValida = 1;
             break;
 
@@ -207,8 +219,17 @@ void questOlimpiadas(){
         }
     }
 
-    printf("\n\n\t\t\t\t3 - Qual é um dos pilares principais dos Jogos Olímpicos de Paris 2024?\n\n");
-    printf("\t\t\t\ta) Desenvolvimento industrial.\n\t\t\t\tb) Promoção cultural.\n\t\t\t\tc) Expansão militar.\n\t\t\t\td) Exploraçao espacial.\n\n");
+    printf("\n\n\n");
+    system("pause");
+    system("cls");
+
+    printf("\n\n\n\t\t\t\t======================== Teste seu Conhecimento =======================\n\n\n\n\n\n");
+
+    printf("\t\t\t\t3 - Qual é um dos pilares principais dos Jogos Olímpicos de Paris 2024?\n\n\n");
+    printf("\t\t\t\ta) Desenvolvimento industrial.\n\n");
+    printf("\t\t\t\tb) Promoção cultural.\n\n");
+    printf("\t\t\t\tc) Expansão militar.\n\n");
+    printf("\t\t\t\td) Exploraçao espacial.\n\n");
     printf("\t\t\t\tResp: ");
     scanf(" %c", &resp);
 
@@ -217,26 +238,26 @@ void questOlimpiadas(){
         switch (resp){
             case 'a':
             case 'A':
-                printf("\t\t\t\tResposta Errada!\n\t\t\t\tResposta Correta: b) Promoção cultural.");
+                printf("\n\t\t\t\tResposta Errada!");
                 respostaValida = 1;
             break;
 
             case 'b':
             case 'B':
-                printf("\t\t\t\tResposta Correta!!!");
+                printf("\n\t\t\t\tResposta Correta!!!");
                 respostaValida = 1;
                 pontuacao++;
             break;
 
             case 'c':
             case 'C':
-                printf("\t\t\t\tResposta Errada!\n\t\t\t\tResposta Correta: b) Promoção cultural.");
+                printf("\n\t\t\t\tResposta Errada!");
                 respostaValida = 1;
             break;
 
             case 'd':
             case 'D':
-                printf("\t\t\t\tResposta Errada!\n\t\t\t\tResposta Correta: b) Promoção cultural.");
+                printf("\n\t\t\t\tResposta Errada!");
                 respostaValida = 1;
             break;
 
@@ -253,19 +274,35 @@ void questOlimpiadas(){
         printf("\n\n\t\t\t\tParabéns, você acertou todas!!!");
     }
     
-    printf("\n\n");
+    printf("\n\n\n");
     system("pause");
     system("cls");
 
-    printf("\n\n\t\t\t\t================ Avalie sua Experiência ===============\n\n\n\n");
+   printf("\n\n\n\t\t\t\t================ Avalie sua Experiência ===============\n\n\n\n\n\n");
+
+    fflush(stdin);
 
     printf("\t\t\t\tDe 0 a 10, qual a sua avaliação quanto a qualidade da\n\t\t\t\texposição e organização da obra?\n\n");
     printf("\t\t\t\tResp: ");
-    scanf("%f", &avaliacao);
+
+     while (1) {
+        fgets(input, sizeof(input), stdin);
+        if (sscanf(input, "%f", &avaliacao) == 1 && avaliacao >= 0 && avaliacao <= 10) {
+            break;
+        }
+        printf("\n\n\t\t\t\tOpção inválida! por favor avalie com um numero entre 0 e 10: ");
+    }
 
     printf("\n\n\t\t\t\tDe 0 a 10, qual a chance de você recomendar a um amigo\n\t\t\t\ta visita a esta exposição?\n\n");
     printf("\t\t\t\tResp: ");
-    scanf("%f", &recomendacao);
+
+     while (1) {
+        fgets(input, sizeof(input), stdin);
+        if (sscanf(input, "%f", &recomendacao) == 1 && recomendacao >= 0 && recomendacao <= 10) {
+            break;
+        }
+        printf("\n\n\t\t\t\tOpção inválida! por favor avalie com um numero entre 0 e 10: ");
+    }
     qtd++;
 
     printf("\n\n\t\t\t\tObrigado pela avaliação :)\n\n");
@@ -303,21 +340,6 @@ void questOlimpiadas(){
     fprintf(resultadosOlimpiadas, "%d\n%.2f\n%.2f\n%.2f", qtdNova, novoPercentual, mdNovaAvaliacao, mdNovaRecomenda);
 
     fclose(resultadosOlimpiadas);
-
-    resultadosOlimpiadas = fopen("Temas/Olimpiadas/resultados_olimpiadas.txt", "r");
-
-    if(resultadosOlimpiadas == NULL){
-        printf("\t\t\t\tErro ao abrir o arquivo!");
-        getch();
-        exit(1);
-    }
-
-    fscanf(resultadosOlimpiadas, "%d", &qtdAnterior);
-    fscanf(resultadosOlimpiadas, "\n%.2lf", &percentualAnterior);
-    fscanf(resultadosOlimpiadas, "\n\n%.2lf", &mdAvaliacaoAnterior);
-    fscanf(resultadosOlimpiadas, "\n\n\n%.2lf", &mdRecomendaAnterior);
-
-    fclose(resultadosOlimpiadas);
     
     resultadosOlimpiadas = fopen("Temas/Olimpiadas/resultados_olimpiadas.csv", "w");
 
@@ -327,11 +349,12 @@ void questOlimpiadas(){
         exit(1);
     }
     
-    fprintf(resultadosOlimpiadas, "Análise dos Resultados:\nQuantidade questionários;%d\nPercentual de acertos;%.2f%%\nMédia da avaliação;%.2f\nMédia da recomendação;%.2f", qtdNova, novoPercentual, mdNovaAvaliacao, mdNovaRecomenda);
+    fprintf(resultadosOlimpiadas, "Análise dos Resultados\nQuantidade questionários;%d\nPercentual de acertos;%.2f%%\nMédia da avaliação;%.2f\nMédia da recomendação;%.2f", qtdNova, novoPercentual, mdNovaAvaliacao, mdNovaRecomenda);
     
     printf("\t\t\t\tQuantidade Avaliações: %d\n", qtdNova);
     printf("\t\t\t\tPercentual de acertos do questionário: %.2f%%\n", novoPercentual);
-    printf("\t\t\t\tNota média dos visitantes: %.2f\n", mdNovaAvaliacao);
+    printf("\t\t\t\tNota média da exposição: %.2f\n", mdNovaAvaliacao);
+    printf("\t\t\t\tMédia da recomendação: %.2f\n", mdNovaRecomenda);
 
     fclose(resultadosOlimpiadas);
 }

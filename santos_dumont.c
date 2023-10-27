@@ -30,10 +30,10 @@ void menuSantosDumont(){
         exit(1);
     }
 
-    printf("\n\n\t\t\t\t============== 150 Anos de Santos Dumont =============\n\n\n\n");
+    printf("\n\n\n\t\t\t\t================= 150 Anos de Santos Dumont ================\n\n\n\n\n\n");
 
-    printf("\t\t\t\tEscolha uma opção para explorar cada tópico e responda um pequeno\n\t\t\t\tquestionário sobre o tema para testar seus conhecimentos:\n\n");
-    printf("\t\t\t\t1 - Biografia e Trajetória de Santos Dumont\n\t\t\t\t2 - Invenções e Contribuições\n\t\t\t\t3 - Reconhecimento e Honrarias Recebidos\n\t\t\t\t4 - Impacto no Desenvolvimento da Aviação Mundial\n\t\t\t\t5 - Questionário e Avaliação do Tema\n\t\t\t\t6 - Voltar\n");
+    printf("\t\t\t\tEscolha uma opção para explorar cada tópico e responda um pequeno\n\t\t\t\tquestionário sobre o tema para testar seus conhecimentos:\n\n\n");
+    printf("\t\t\t\t1 - Biografia e Trajetória de Santos Dumont\n\n\t\t\t\t2 - Invenções e Contribuições\n\n\t\t\t\t3 - Reconhecimento e Honrarias Recebidas\n\n\t\t\t\t4 - Impacto no Desenvolvimento da Aviação Mundial\n\n\t\t\t\t5 - Questionário e Avaliação do Tema\n\n\t\t\t\t6 - Voltar\n\n");
     printf("\n\t\t\t\tOpção: ");
     scanf("%d", &op);
 
@@ -117,17 +117,20 @@ void menuSantosDumont(){
 
 void questSantosDumont(){
 
-    char resp;
+    char resp, input[5];
     int pontuacao = 0;
     int respostaValida = 0, qtd = 0, qtdAnterior, qtdNova;
     float avaliacao, recomendacao; 
     float percentual, mdPercentual, mdRecomenda, mdAvaliacao, novoPercentual, mdNovaRecomenda, mdNovaAvaliacao;
     float mdAvaliacaoAnterior, mdRecomendaAnterior, percentualAnterior;
 
-    printf("\n\n\t\t\t\t================ Teste seu Conhecimento ===============\n\n\n\n");
+    printf("\n\n\n\t\t\t\t==================== Teste seu Conhecimento ===================\n\n\n\n\n\n");
 
-    printf("\t\t\t\t1 - Qual foi a contribuição de Santos Dumont para a aviação?\n\n");
-    printf("\t\t\t\ta) Desenvolvia peças para a construção de dirigíveis\n\t\t\t\tb) Disponibilizava dinheiro de sua fortuna para projetos de dirigíveis\n\t\t\t\tc) Foi o único voluntário para fazer o primeiro voo ao ar livre no dirigível Demoiselle\n\t\t\t\td) Desenvolveu o dirigível e construiu aviões pioneiros, como o 14-Bis e o Demoiselle\n\n");
+    printf("\t\t\t\t1 - Qual foi a contribuição de Santos Dumont para a aviação?\n\n\n");
+    printf("\t\t\t\ta) Desenvolvia peças para a construção de dirigíveis.\n\n");
+    printf("\t\t\t\tb) Disponibilizava dinheiro de sua fortuna para projetos de\n\t\t\t\tdirigíveis\n\n");
+    printf("\t\t\t\tc) Foi o único voluntário para fazer o primeiro voo ao ar livre\n\t\t\t\tno dirigível Demoiselle\n\n");
+    printf("\t\t\t\td) Desenvolveu o dirigível e construiu aviões pioneiros, como\n\t\t\t\to 14-Bis e o Demoiselle\n\n");
     printf("\t\t\t\tResp: ");
     scanf(" %c", &resp); 
 
@@ -135,25 +138,25 @@ void questSantosDumont(){
         switch (resp) {
             case 'a':
             case 'A':
-                printf("\t\t\t\tResposta Errada!\n\t\t\t\tResposta Correta: d) Santos Dumont desenvolveu o dirigível e construiu aviões pioneiros, como o 14-Bis e o Demoiselle.");
+                printf("\n\t\t\t\tResposta Errada!");
                 respostaValida = 1;
                 break;
 
             case 'b':
             case 'B':
-                printf("\t\t\t\tResposta Errada!\n\t\t\t\tResposta Correta: d) Santos Dumont desenvolveu o dirigível e construiu aviões pioneiros, como o 14-Bis e o Demoiselle.");
+                printf("\n\t\t\t\tResposta Errada!");
                 respostaValida = 1;
                 break;
 
             case 'c':
             case 'C':
-                printf("\t\t\t\tResposta Errada!\n\t\t\t\tResposta Correta: d) Santos Dumont desenvolveu o dirigível e construiu aviões pioneiros, como o 14-Bis e o Demoiselle.");
+                printf("\n\t\t\t\tResposta Errada!");
                 respostaValida = 1;
                 break;
 
             case 'd':
             case 'D':
-                printf("\t\t\t\tResposta Correta!!!");
+                printf("\n\t\t\t\tResposta Correta!!!");
                 pontuacao++;
                 respostaValida = 1;
                 break;
@@ -165,8 +168,17 @@ void questSantosDumont(){
         }
     }
 
-    printf("\n\n\t\t\t\t2 - Onde nasceu Santos Dumont?\n\n");
-    printf("\t\t\t\ta) Minas Gerais\n\t\t\t\tb) França\n\t\t\t\tc) São Paulo\n\t\t\t\td) Rio de Janeiro\n\n");
+    printf("\n\n\n");
+    system("pause");
+    system("cls");
+
+    printf("\n\n\n\t\t\t\t==================== Teste seu Conhecimento ===================\n\n\n\n\n\n");
+
+    printf("\t\t\t\t2 - Onde nasceu Santos Dumont?\n\n\n");
+    printf("\t\t\t\ta) Minas Gerais.");
+    printf("\n\t\t\t\tb) França.\n\n");
+    printf("\t\t\t\tc) São Paulo.\n\n");
+    printf("\t\t\t\td) Rio de Janeiro.\n\n");
     printf("\t\t\t\tResp: ");
     scanf(" %c", &resp);
     getchar();
@@ -176,26 +188,26 @@ void questSantosDumont(){
         switch (resp){
             case 'a':
             case 'A':
-                printf("\t\t\t\tResposta Correta!!!");
+                printf("\n\t\t\t\tResposta Correta!!!");
                 respostaValida = 1;
                 pontuacao++;
             break;
 
             case 'b':
             case 'B':
-                printf("\t\t\t\tResposta Errada!\n\t\t\t\tResposta Correta: a) Minas Gerais.");
+                printf("\n\t\t\t\tResposta Errada!");
                 respostaValida = 1;
             break;
 
             case 'c':
             case 'C':
-                printf("\t\t\t\tResposta Errada!\n\t\t\t\tResposta Correta: a) Minas Gerais.");
+                printf("\n\t\t\t\tResposta Errada!");
                 respostaValida = 1;
             break;
 
             case 'd':
             case 'D':
-                printf("\t\t\t\tResposta Errada!\n\t\t\t\tResposta Correta: a) Minas Gerais.");
+                printf("\n\t\t\t\tResposta Errada!");
                 respostaValida = 1;
             break;
 
@@ -206,8 +218,17 @@ void questSantosDumont(){
         }
     }
 
-    printf("\n\n\t\t\t\t3 - Quais são as invenções mais conhecidas de Santos Dumont?\n\n");
-    printf("\t\t\t\ta) Avião e helicóptero\n\t\t\t\tb) Foguete e dirigível\n\t\t\t\tc) Balão a gás e 14-Bis\n\t\t\t\td) Bicicleta voadora e submarino\n\n");
+    printf("\n\n\n");
+    system("pause");
+    system("cls");
+
+    printf("\n\n\n\t\t\t\t==================== Teste seu Conhecimento ===================\n\n\n\n\n\n");
+
+    printf("\n\n\t\t\t\t3 - Quais são as invenções mais conhecidas de Santos Dumont?\n\n\n");
+    printf("\t\t\t\ta) Avião e helicóptero.\n\n");
+    printf("\t\t\t\tb) Foguete e dirigível.\n\n");
+    printf("\t\t\t\tc) Balão a gás e 14-Bis.\n\n");
+    printf("\t\t\t\td) Bicicleta voadora e submarino.\n\n");
     printf("\t\t\t\tResp: ");
     scanf(" %c", &resp);
 
@@ -216,26 +237,26 @@ void questSantosDumont(){
         switch (resp){
             case 'a':
             case 'A':
-                printf("\t\t\t\tResposta Errada!\n\t\t\t\tResposta Correta: c) Balão a gás e 14-Bis.");
+                printf("\n\t\t\t\tResposta Errada!");
                 respostaValida = 1;
             break;
 
             case 'b':
             case 'B':
-                printf("\t\t\t\tResposta Errada!\n\t\t\t\tResposta Correta: c) Balão a gás e 14-Bis.");
+                printf("\n\t\t\t\tResposta Errada!");
                 respostaValida = 1;
             break;
 
             case 'c':
             case 'C':
-                printf("\t\t\t\tResposta Correta!!!");
+                printf("\n\t\t\t\tResposta Correta!!!");
                 respostaValida = 1;
                 pontuacao++;
             break;
 
             case 'd':
             case 'D':
-                printf("\t\t\t\tResposta Errada!\n\t\t\t\tResposta Correta: c) Balão a gás e 14-Bis.");
+                printf("\n\t\t\t\tResposta Errada!");
                 respostaValida = 1;
             break;
 
@@ -252,19 +273,35 @@ void questSantosDumont(){
         printf("\n\n\t\t\t\tParabéns, você acertou todas!!!");
     }
     
-    printf("\n\n");
+    printf("\n\n\n");
     system("pause");
     system("cls");
 
-    printf("\n\n\t\t\t\t================ Avalie sua Experiência ===============\n\n\n\n");
+    printf("\n\n\n\t\t\t\t================ Avalie sua Experiência ===============\n\n\n\n");
+
+    fflush(stdin);
 
     printf("\t\t\t\tDe 0 a 10, qual a sua avaliação quanto a qualidade da\n\t\t\t\texposição e organização da obra?\n\n");
     printf("\t\t\t\tResp: ");
-    scanf("%f", &avaliacao);
+
+     while (1) {
+        fgets(input, sizeof(input), stdin);
+        if (sscanf(input, "%f", &avaliacao) == 1 && avaliacao >= 0 && avaliacao <= 10) {
+            break;
+        }
+        printf("\n\n\t\t\t\tOpção inválida! por favor avalie com um numero entre 0 e 10: ");
+    }
 
     printf("\n\n\t\t\t\tDe 0 a 10, qual a chance de você recomendar a um amigo\n\t\t\t\ta visita a esta exposição?\n\n");
     printf("\t\t\t\tResp: ");
-    scanf("%f", &recomendacao);
+
+     while (1) {
+        fgets(input, sizeof(input), stdin);
+        if (sscanf(input, "%f", &recomendacao) == 1 && recomendacao >= 0 && recomendacao <= 10) {
+            break;
+        }
+        printf("\n\n\t\t\t\tOpção inválida! por favor avalie com um numero entre 0 e 10: ");
+    }
     qtd++;
 
     printf("\n\n\t\t\t\tObrigado pela avaliação :)\n\n");
@@ -302,21 +339,6 @@ void questSantosDumont(){
     fprintf(resultadosSantosDumont, "%d\n%.2f\n%.2f\n%.2f", qtdNova, novoPercentual, mdNovaAvaliacao, mdNovaRecomenda);
 
     fclose(resultadosSantosDumont);
-
-    resultadosSantosDumont = fopen("Temas/SantosDumont/resultados_santos_dumont.txt", "r");
-
-    if(resultadosSantosDumont == NULL){
-        printf("\t\t\t\tErro ao abrir o arquivo!");
-        getch();
-        exit(1);
-    }
-
-    fscanf(resultadosSantosDumont, "%d", &qtdAnterior);
-    fscanf(resultadosSantosDumont, "\n%.2lf", &percentualAnterior);
-    fscanf(resultadosSantosDumont, "\n\n%.2lf", &mdAvaliacaoAnterior);
-    fscanf(resultadosSantosDumont, "\n\n\n%.2lf", &mdRecomendaAnterior);
-
-    fclose(resultadosSantosDumont);
     
     resultadosSantosDumont = fopen("Temas/SantosDumont/resultados_santos_dumont.csv", "w");
 
@@ -326,11 +348,12 @@ void questSantosDumont(){
         exit(1);
     }
     
-    fprintf(resultadosSantosDumont, "Análise dos Resultados:\nQuantidade questionários;%d\nPercentual de acertos;%.2f%%\nMédia da avaliação;%.2f\nMédia da recomendação;%.2f", qtdNova, novoPercentual, mdNovaAvaliacao, mdNovaRecomenda);
+    fprintf(resultadosSantosDumont, "Análise dos Resultados\nQuantidade questionários;%d\nPercentual de acertos;%.2f%%\nMédia da avaliação;%.2f\nMédia da recomendação;%.2f", qtdNova, novoPercentual, mdNovaAvaliacao, mdNovaRecomenda);
     
     printf("\t\t\t\tQuantidade Avaliações: %d\n", qtdNova);
     printf("\t\t\t\tPercentual de acertos do questionário: %.2f%%\n", novoPercentual);
-    printf("\t\t\t\tNota média dos visitantes: %.2f\n", mdNovaAvaliacao);
+    printf("\t\t\t\tNota média da exposição: %.2f\n", mdNovaAvaliacao);
+    printf("\t\t\t\tMédia da recomendação: %.2f\n", mdNovaRecomenda);
 
     fclose(resultadosSantosDumont);
 }

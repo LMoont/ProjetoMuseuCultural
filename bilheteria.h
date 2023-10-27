@@ -12,7 +12,7 @@ extern char temasDoUsuario[MAX_BILHETES][40], nomeUsuario[30], codigo[5];
 extern int numCompras, idadeUsuario, estudante, temaEscolhido, pagamentoRealizado;
 
 struct Registros{
-        int numBilhete;
+        int     numBilhete;
         char    nome[50];
         int     idade;
         char    tema[50];

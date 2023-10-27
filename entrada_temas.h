@@ -4,7 +4,7 @@
 #include "bilheteria.h"
 #include "arte_moderna.h"
 
-void validaBilhete();
+void validarBilhete();
 void alterarStatusBilhete();
 void entradaTema();
 

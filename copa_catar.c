@@ -30,10 +30,10 @@ void menuCopaCatar(){
         exit(1);
     }
 
-    printf("\n\n\t\t\t\t============== Copa do Mundo Catar 2022 =============\n\n\n\n");
+    printf("\n\n\n\t\t\t\t==================== Copa do Mundo Catar 2022 ===================\n\n\n\n\n\n");
 
-    printf("\t\t\t\tEscolha uma opção para explorar cada tópico e responda um pequeno\n\t\t\t\tquestionário para testar seus conhecimentos e avaliar a exposição:\n\n");
-    printf("\t\t\t\t1 - Preparação e Infraestrutura\n\t\t\t\t2 - Final Histórica\n\t\t\t\t3 - Aspecto Social e Cultural do País\n\t\t\t\t4 - Sustentabilidade e Legado Ambiental\n\t\t\t\t5 - Questionário e Avaliação do Tema\n\t\t\t\t6 - Voltar\n");
+    printf("\t\t\t\tEscolha uma opção para explorar cada tópico e responda um pequeno\n\t\t\t\tquestionário para testar seus conhecimentos e avaliar a exposição:\n\n\n");
+    printf("\t\t\t\t1 - Preparação e Infraestrutura\n\n\t\t\t\t2 - Final Histórica\n\n\t\t\t\t3 - Aspecto Social e Cultural do País\n\n\t\t\t\t4 - Sustentabilidade e Legado Ambiental\n\n\t\t\t\t5 - Questionário e Avaliação do Tema\n\n\t\t\t\t6 - Voltar\n\n");
     printf("\n\t\t\t\tOpção: ");
     scanf("%d", &op);
 
@@ -117,17 +117,20 @@ void menuCopaCatar(){
 
 void questCopaCatar(){
 
-    char resp;
+    char resp, input[5];
     int pontuacao = 0;
     int respostaValida = 0, qtd = 0, qtdAnterior, qtdNova;
     float avaliacao, recomendacao; 
     float percentual, mdPercentual, mdRecomenda, mdAvaliacao, novoPercentual, mdNovaRecomenda, mdNovaAvaliacao;
     float mdAvaliacaoAnterior, mdRecomendaAnterior, percentualAnterior;
 
-    printf("\n\n\t\t\t\t================ Teste seu Conhecimento ===============\n\n\n\n");
+    printf("\n\n\n\t\t\t\t========================= Teste seu Conhecimento ========================\n\n\n\n\n\n");
 
-    printf("\t\t\t\t1 - Quantos estádios foram utilizados na Copa do Mundo no Catar em 2022?\n\n");
-    printf("\t\t\t\ta) 15 estádios.\n\t\t\t\tb) 14 estádios.\n\t\t\t\tc) 8 estádios.\n\t\t\t\td) 12 estádios.\n\n");
+    printf("\t\t\t\t1 - Quantos estádios foram utilizados na Copa do Mundo no Catar em 2022?\n\n\n");
+    printf("\t\t\t\ta) 15 estádios.\n\n");
+    printf("\t\t\t\tb) 14 estádios.\n\n");
+    printf("\t\t\t\tc) 8 estádios.\n\n");
+    printf("\t\t\t\td) 12 estádios.\n\n");
     printf("\t\t\t\tResp: ");
     scanf(" %c", &resp); 
 
@@ -135,26 +138,26 @@ void questCopaCatar(){
         switch (resp) {
             case 'a':
             case 'A':
-                printf("\t\t\t\tResposta Errada!\n\t\t\t\tResposta Correta: c) 8 estádios.");
+                printf("\n\t\t\t\tResposta Errada!");
                 respostaValida = 1;
                 break;
 
             case 'b':
             case 'B':
-                printf("\t\t\t\tResposta Errada!\n\t\t\t\tResposta Correta: c) 8 estádios.");
+                printf("\n\t\t\t\tResposta Errada!");
                 respostaValida = 1;
                 break;
 
             case 'c':
             case 'C':
-                printf("\t\t\t\tResposta Correta!!!");
+                printf("\n\t\t\t\tResposta Correta!!!");
                 pontuacao++;
                 respostaValida = 1;
                 break;
 
             case 'd':
             case 'D':
-                printf("\t\t\t\tResposta Errada!\n\t\t\t\tResposta Correta: c) 8 estádios.");
+                printf("\n\t\t\t\tResposta Errada!");
                 respostaValida = 1;
                 break;
 
@@ -165,8 +168,18 @@ void questCopaCatar(){
         }
     }
 
-    printf("\n\n\t\t\t\t2 - Qual elemento é fundamental na cultura catariana?\n\n");
-    printf("\t\t\t\ta) Inovação tecnológica.\n\t\t\t\tb) Hospitalidade.\n\t\t\t\tc) Urbanização acelerada.\n\t\t\t\td) Conservadorismo social.\n\n");
+    printf("\n\n\n");
+    system("pause");
+    system("cls");
+
+    printf("\n\n\n\t\t\t\t========================= Teste seu Conhecimento ========================\n\n\n\n\n\n");
+
+
+    printf("\t\t\t\t2 - Qual elemento é fundamental na cultura catariana?\n\n\n");
+    printf("\t\t\t\ta) Inovação tecnológica.\n\n");
+    printf("\t\t\t\tb) Hospitalidade.\n\n");
+    printf("\t\t\t\tc) Urbanização acelerada.\n\n");
+    printf("\t\t\t\td) Conservadorismo social.\n\n");
     printf("\t\t\t\tResp: ");
     scanf(" %c", &resp);
     getchar();
@@ -176,26 +189,26 @@ void questCopaCatar(){
         switch (resp){
             case 'a':
             case 'A':
-                printf("\t\t\t\tResposta Errada!\n\t\t\t\tResposta Correta: b) Hospitalidade.");
+                printf("\n\t\t\t\tResposta Errada!");
                 respostaValida = 1;
             break;
 
             case 'b':
             case 'B':
-                printf("\t\t\t\tResposta Correta!!!");
+                printf("\n\t\t\t\tResposta Correta!!!");
                 respostaValida = 1;
                 pontuacao++;
             break;
 
             case 'c':
             case 'C':
-                printf("\t\t\t\tResposta Errada!\n\t\t\t\tResposta Correta: b) Hospitalidade.");
+                printf("\n\t\t\t\tResposta Errada!");
                 respostaValida = 1;
             break;
 
             case 'd':
             case 'D':
-                printf("\t\t\t\tResposta Errada!\n\t\t\t\tResposta Correta: b) Hospitalidade.");
+                printf("\n\t\t\t\tResposta Errada!");
                 respostaValida = 1;
             break;
 
@@ -206,8 +219,18 @@ void questCopaCatar(){
         }
     }
 
-    printf("\n\n\t\t\t\t3 - Quem foi reconhecido como o Melhor Jogador da Copa do Mundo de 2022?\n\n");
-    printf("\t\t\t\ta) Cristiano Ronaldo.\n\t\t\t\tb) Lionel Messi.\n\t\t\t\tc) Neymar Jr.\n\t\t\t\td) Kylian Mbappé.\n\n");
+    printf("\n\n\n");
+    system("pause");
+    system("cls");
+
+    printf("\n\n\n\t\t\t\t========================= Teste seu Conhecimento ========================\n\n\n\n\n\n");
+
+
+    printf("\t\t\t\t3 - Quem foi reconhecido como o Melhor Jogador da Copa do Mundo de 2022?\n\n\n");
+    printf("\t\t\t\ta) Cristiano Ronaldo.\n\n");
+    printf("\t\t\t\tb) Lionel Messi.\n\n");
+    printf("\t\t\t\tc) Neymar Jr.\n\n");
+    printf("\t\t\t\td) Kylian Mbappé.\n\n");
     printf("\t\t\t\tResp: ");
     scanf(" %c", &resp);
 
@@ -216,26 +239,26 @@ void questCopaCatar(){
         switch (resp){
             case 'a':
             case 'A':
-                printf("\t\t\t\tResposta Errada!\n\t\t\t\tResposta Correta: b) Lionel Messi.");
+                printf("\n\t\t\t\tResposta Errada!");
                 respostaValida = 1;
             break;
 
             case 'b':
             case 'B':
-                printf("\t\t\t\tResposta Correta!!!");
+                printf("\n\t\t\t\tResposta Correta!!!");
                 respostaValida = 1;
                 pontuacao++;
             break;
 
             case 'c':
             case 'C':
-                printf("\t\t\t\tResposta Errada!\n\t\t\t\tResposta Correta: b) Lionel Messi.");
+                printf("\n\t\t\t\tResposta Errada!");
                 respostaValida = 1;
             break;
 
             case 'd':
             case 'D':
-                printf("\t\t\t\tResposta Errada!\n\t\t\t\tResposta Correta: b) Lionel Messi.");
+                printf("\n\t\t\t\tResposta Errada!");
                 respostaValida = 1;
             break;
 
@@ -252,23 +275,39 @@ void questCopaCatar(){
         printf("\n\n\t\t\t\tParabéns, você acertou todas!!!");
     }
     
-    printf("\n\n");
+    printf("\n\n\n");
     system("pause");
     system("cls");
 
-    printf("\n\n\t\t\t\t================ Avalie sua Experiência ===============\n\n\n\n");
+    printf("\n\n\n\t\t\t\t================ Avalie sua Experiência ===============\n\n\n\n\n\n");
+
+    fflush(stdin);
 
     printf("\t\t\t\tDe 0 a 10, qual a sua avaliação quanto a qualidade da\n\t\t\t\texposição e organização da obra?\n\n");
     printf("\t\t\t\tResp: ");
-    scanf("%f", &avaliacao);
+
+     while (1) {
+        fgets(input, sizeof(input), stdin);
+        if (sscanf(input, "%f", &avaliacao) == 1 && avaliacao >= 0 && avaliacao <= 10) {
+            break;
+        }
+        printf("\n\n\t\t\t\tOpção inválida! por favor avalie com um numero entre 0 e 10: ");
+    }
 
     printf("\n\n\t\t\t\tDe 0 a 10, qual a chance de você recomendar a um amigo\n\t\t\t\ta visita a esta exposição?\n\n");
     printf("\t\t\t\tResp: ");
-    scanf("%f", &recomendacao);
+
+     while (1) {
+        fgets(input, sizeof(input), stdin);
+        if (sscanf(input, "%f", &recomendacao) == 1 && recomendacao >= 0 && recomendacao <= 10) {
+            break;
+        }
+        printf("\n\n\t\t\t\tOpção inválida! por favor avalie com um numero entre 0 e 10: ");
+    }
     qtd++;
 
     printf("\n\n\t\t\t\tObrigado pela avaliação :)\n\n");
-
+    
     percentual = (pontuacao/3.0)*100;
 
     FILE *resultadosCopaCatar = fopen("Temas/CopaCatar/resultados_catar.txt", "r");
@@ -302,21 +341,6 @@ void questCopaCatar(){
     fprintf(resultadosCopaCatar, "%d\n%.2f\n%.2f\n%.2f", qtdNova, novoPercentual, mdNovaAvaliacao, mdNovaRecomenda);
 
     fclose(resultadosCopaCatar);
-
-    resultadosCopaCatar = fopen("Temas/CopaCatar/resultados_catar.txt", "r");
-
-    if(resultadosCopaCatar == NULL){
-        printf("\t\t\t\tErro ao abrir o arquivo!");
-        getch();
-        exit(1);
-    }
-
-    fscanf(resultadosCopaCatar, "%d", &qtdAnterior);
-    fscanf(resultadosCopaCatar, "\n%.2lf", &percentualAnterior);
-    fscanf(resultadosCopaCatar, "\n\n%.2lf", &mdAvaliacaoAnterior);
-    fscanf(resultadosCopaCatar, "\n\n\n%.2lf", &mdRecomendaAnterior);
-
-    fclose(resultadosCopaCatar);
     
     resultadosCopaCatar = fopen("Temas/CopaCatar/resultados_catar.csv", "w");
 
@@ -326,11 +350,12 @@ void questCopaCatar(){
         exit(1);
     }
     
-    fprintf(resultadosCopaCatar, "Análise dos Resultados:\nQuantidade questionários;%d\nPercentual de acertos;%.2f%%\nMédia da avaliação;%.2f\nMédia da recomendação;%.2f", qtdNova, novoPercentual, mdNovaAvaliacao, mdNovaRecomenda);
+    fprintf(resultadosCopaCatar, "Análise dos Resultados\nQuantidade questionários;%d\nPercentual de acertos;%.2f%%\nMédia da avaliação;%.2f\nMédia da recomendação;%.2f", qtdNova, novoPercentual, mdNovaAvaliacao, mdNovaRecomenda);
     
     printf("\t\t\t\tQuantidade Avaliações: %d\n", qtdNova);
     printf("\t\t\t\tPercentual de acertos do questionário: %.2f%%\n", novoPercentual);
-    printf("\t\t\t\tNota média dos visitantes: %.2f\n", mdNovaAvaliacao);
+    printf("\t\t\t\tNota média da exposição: %.2f\n", mdNovaAvaliacao);
+    printf("\t\t\t\tMédia da recomendação: %.2f\n", mdNovaRecomenda);
 
     fclose(resultadosCopaCatar);
 }

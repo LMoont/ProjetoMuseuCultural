@@ -19,7 +19,7 @@ int main();
 void visualizarBilhete(){
     int i;
 
-    printf("\n\n\t\t\t\t=========== BILHETES ADQUIRIDOS ===========\n\n\n");
+    printf("\n\n\t\t\t\t============ LISTA DE INGRESSOS ============\n\n\n");
 
     for(i=0; i<numCompras; i++){
     printf("\n\t\t\t\tBilhete: %d\n", i+1);
@@ -37,26 +37,26 @@ void visualizarBilhete(){
 }
 
 void sobre(){
-    printf("\n\n\t\t\t\t================================= SOBRE =================================\n\n");
+    printf("\n\n\t\t\t\t========================= INFORMAÇÕES ADICIONAIS =========================\n\n\n");
     
-    printf("\n\t\t\t\tREGRAS PARA A COMPRA DOS INGRESSOS:");
+    printf("\n\t\t\t\tREGRAS PARA A COMPRA DOS INGRESSOS");
     printf("\n\t\t\t\tMeia-Entrada: estudantes que apresentarem a carteirinha; PcD ou\n\t\t\t\tidoso (a partir de 60 anos), conforme a lei da meia-entrada.\n");
-    printf("\n\t\t\t\tEntrada Gratuita (Isenção): somente nas terças e quintas.\n");
+    printf("\t\t\t\tEntrada Gratuita (Isenção): nas terças e quintas.\n\n");
     
     printf("\n\t\t\t\tDADOS DO USUÁRIO:");
-    printf("\n\t\t\t\tNenhum dado sensível será coletado. Todos os dados informados pelo usuário estarão\n\t\t\t\tprotegidos pela LGPD.");
+    printf("\n\t\t\t\tNenhum dado sensível será coletado. Todos os dados informados pelo usuário\n\t\t\t\testarão protegidos pela LGPD.\n\n");
 
-    printf("\n\n\t\t\t\tQUESTIONÁRIOS E AVALIAÇÕES DAS EXPOSIÇÕES:");
-    printf("\n\t\t\t\tAs respostas coletadas dos questionários e avaliações de temas servirão apenas\n\t\t\t\tpara analisar a aprovação da obra. Nenhuma resposta será vinculada ao respectivo visitante.");
+    printf("\n\t\t\t\tQUESTIONÁRIOS E AVALIAÇÕES DAS EXPOSIÇÕES:");
+    printf("\n\t\t\t\tAs respostas coletadas dos questionários e avaliações de temas servirão\n\t\t\t\tapenas para analisar a aprovação da obra. Nenhuma resposta será vinculada\n\t\t\t\tao respectivo visitante.\n\n");
 
-    printf("\n\n\t\t\t\tDESCRIÇÃO DO PROGRAMA:");
-    printf("\n\t\t\t\tSoftware de gerenciamento de um museu. Inclui a exposição de temas culturais e\n\t\t\t\tatuais, gerenciamento de ingressos, coleta de pesquisas de visitantes e análise de dados.");
+    printf("\n\t\t\t\tDESCRIÇÃO DO PROGRAMA:");
+    printf("\n\t\t\t\tSoftware de gerenciamento de um museu. Inclui a exposição de temas culturais\n\t\t\t\te atuais, gerenciamento de ingressos, coleta de pesquisas de visitantes\n\t\t\t\te análise de dados.\n\n");
 
-    printf("\n\n\t\t\t\tAUTOR:");
-    printf("\n\t\t\t\tLucas Montino.");
+    printf("\n\t\t\t\tAUTOR:");
+    printf("\n\t\t\t\tLucas Montino.\n\n");
 
-    printf("\n\n\t\t\t\tCOLABORADORES:");
-    printf("\n\t\t\t\tBruno Ferreira, Guilherme Fernandez, Gabriel Stangari,\n\t\t\t\tIvan Oliveira e Kaiqui Monteiro.");
+    printf("\n\t\t\t\tCOLABORADORES:");
+    printf("\n\t\t\t\tBruno Ferreira, Guilherme Fernandez, Gabriel Stangari,\n\t\t\t\tIvan Oliveira e Kaiqui Monteiro.\n\n");
 
     printf("\n\n*Pressione qualquer tecla para voltar*");
     getch();
@@ -65,21 +65,21 @@ void sobre(){
 }
 
 void temas(){
-    printf("\n\n\t\t\t\t================================= TEMAS DA EXPOSIÇÃO =================================\n\n");
+    printf("\n\n\t\t\t=============================== APRESENTAÇÃO DOS TEMAS ===============================\n\n\n");
     
-    printf("\n\t\t\t\t100 ANOS DA SEMANA DE ARTE MODERNA:\n");
-    printf("\t\t\t\tCelebra o centenário da icônica Semana de Arte Moderna de 1922, um marco cultural no\n\t\t\t\tBrasil que revolucionou as artes e promoveu a valorizaçãoo da cultura nacional.\n");
+    printf("\n\t\t\t100 ANOS DA SEMANA DE ARTE MODERNA:\n");
+    printf("\t\t\tCelebra o centenário da icônica Semana de Arte Moderna de 1922, um marco cultural no\n\t\t\tBrasil que revolucionou as artes e promoveu a valorizaçãoo da cultura nacional.\n\n");
 
-    printf("\n\t\t\t\t150 ANOS DE SANTOS DUMONT:\n");
-    printf("\t\t\t\tUma homenagem ao 150° aniversário de Alberto Santos-Dumont, pioneiro da aviação e\n\t\t\t\tinventor brasileiro, cujas realizações revolucionaram a história da aviação.\n");
+    printf("\n\t\t\t150 ANOS DE SANTOS DUMONT:\n");
+    printf("\t\t\tUma homenagem ao 150° aniversário de Alberto Santos-Dumont, pioneiro da aviação e\n\t\t\tinventor brasileiro, cujas realizações revolucionaram a história da aviação.\n\n");
 
-    printf("\n\t\t\t\tJOGOS OLÍMPICOS DE PARIS 2024:\n");
-    printf("\t\t\t\tPróxima edição dos Jogos Olímpicos de Verão que ocorrerão em Paris, França, em 2024.\n");
+    printf("\n\t\t\tJOGOS OLÍMPICOS DE PARIS 2024:\n");
+    printf("\t\t\tPróxima edição dos Jogos Olímpicos de Verão que ocorrerão em Paris, França, em 2024.\n\n");
 
-    printf("\n\t\t\t\tCOPA DO MUNDO CATAR 2022:\n");
-    printf("\t\t\t\tFoi a primeira vez que a Copa do Mundo foi realizada no Oriente Médio e no final do ano,\n\t\t\t\tdevida a alta temperatura do país. Esses e outros elementos tornaram essa Copa histórica.\n");
+    printf("\n\t\t\tCOPA DO MUNDO CATAR 2022:\n");
+    printf("\t\t\tFoi a primeira vez que a Copa do Mundo foi realizada no Oriente Médio e no final do ano,\n\t\t\tdevida a alta temperatura do país. Esses e outros elementos tornaram essa Copa histórica.\n\n");
 
-    printf("\n\n*Pressione qualquer tecla para voltar*");
+    printf("\n\n\n*Pressione qualquer tecla para voltar*");
     getch();
     menuEntrada();
 }
@@ -90,8 +90,8 @@ void menuEntrada(){
     do{
         system("cls");
         
-        printf("\n\n\t\t\t\t============== MENU MUSEU DE ARTE MULTITEMÁTICO ==============\n\n");
-        printf("\n\t\t\t\t1 - Temas\n\t\t\t\t2 - Bilheteria\n\t\t\t\t3 - Visualizar Bilhete\n\t\t\t\t4 - Entrada do Museu\n\t\t\t\t5 - Sobre\n\t\t\t\t6 - Voltar\n");
+        printf("\n\n\t\t\t\t============== MENU MUSEU DE ARTE MULTITEMÁTICO ==============\n\n\n\n");
+        printf("\n\t\t\t\t1 - Apresentação dos Temas\n\n\t\t\t\t2 - Venda de Ingressos\n\n\t\t\t\t3 - Exibição das Obras\n\n\t\t\t\t4 - Lista de Ingressos Comprados\n\n\t\t\t\t5 - Informações Adicionais e Avisos Importantes\n\n\t\t\t\t6 - Voltar\n\n");
         printf("\n\t\t\t\tOpção: ");
         scanf("%d", &op);
         fflush(stdin);
@@ -110,7 +110,7 @@ void menuEntrada(){
             case 3:
                 if(pagamentoRealizado == 1){
                     system("cls");
-                    visualizarBilhete();
+                    entradaTema();
                 }else{
                     printf("\n\t\t\t\tPrecisa comprar o ingresso antes!\n\n\n");
                     system("pause");
@@ -121,13 +121,14 @@ void menuEntrada(){
             case 4:
                 if(pagamentoRealizado == 1){
                     system("cls");
-                    entradaTema();
+                    visualizarBilhete();
                 }else{
                     printf("\n\t\t\t\tPrecisa comprar o ingresso antes!\n\n\n");
                     system("pause");
                     system("cls");
                     dadosUsuario();
                 }
+                
             break;
 
             case 5:
@@ -151,18 +152,16 @@ void menuEntrada(){
 int main ()
 {
     int var;
-    //system("color 1F");
+    system("color 0F");
     setlocale(LC_ALL, "Portuguese");
 
-    printf("\n\n\t\t\t\t================= BEM-VINDO AO MUSEU MULTITEMÁTICO ================\n\n");
+    printf("\n\n\n\n\n\n\t\t\t\t================= BEM-VINDO AO MUSEU MULTITEMÁTICO ================\n\n\n\n");
 
-    printf("\n\n\n\n\t\t\t\tVeja as opções disponíveis no menu\n");
-    printf("\n\t\t\t\tAperte qualquer tecla para visualizar o menu ou\n\t\t\t\tEspaço para sair agora.");
-    printf("\n\n\n\t\t\t\t(dica: entre na sessão 'sobre' e 'temas' antes de ir para a\n\t\t\t\tcompra de ingressos)");
-
+    printf("\n\n\n\n\t\t\t\t\t\t Veja as opções disponíveis no menu.\n");
+    printf("\n\t\t\t\t\t    Aperte qualquer tecla para visualizar o menu\n\t\t\t\t\t\t     ou Espaço para sair agora.");
     var = getch();
     if(var == 32){
-        printf("\n\t\t\t\tObrigado pela visita e volte sempre.");
+        printf("\n\n\t\t\t\t\t\tObrigado pela visita e volte sempre.");
         getch();
         exit(0);
         }
