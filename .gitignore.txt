@@ -1,0 +1,10 @@
+bilhetes.txt
+resultados_arte_moderna.csv
+resultados_arte_moderna.txt
+resultados_catar.csv
+resultados_catar.txt
+resultados_olimpiadas.csv
+resultados_olimpiadas.txt
+resultados_santos_dumont.csv
+resultados_santos_dumont.txt
+
