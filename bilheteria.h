@@ -8,8 +8,8 @@ void dadosUsuario();
 void pagamento();
 void gerarCod();
 
-extern char temasDoUsuario[MAX_BILHETES][40], nomeUsuario[30], codigo[5];
-extern int numCompras, idadeUsuario, estudante, temaEscolhido, pagamentoRealizado;
+extern char nomeUsuario[30], codigo[5];
+extern int numCompras, idadeUsuario, estudante, temaEscolhido, pagamentoRealizado, qtd;
 
 struct Registros{
         int     numBilhete;

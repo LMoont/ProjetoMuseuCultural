@@ -65,7 +65,7 @@ void sobre(){
 }
 
 void temas(){
-    printf("\n\n\t\t\t=============================== APRESENTAÇÃO DOS TEMAS ===============================\n\n\n");
+    printf("\n\n\n\t\t\t=============================== APRESENTAÇÃO DOS TEMAS ===============================\n\n\n");
     
     printf("\n\t\t\t100 ANOS DA SEMANA DE ARTE MODERNA:\n");
     printf("\t\t\tCelebra o centenário da icônica Semana de Arte Moderna de 1922, um marco cultural no\n\t\t\tBrasil que revolucionou as artes e promoveu a valorizaçãoo da cultura nacional.\n\n");
@@ -90,7 +90,7 @@ void menuEntrada(){
     do{
         system("cls");
         
-        printf("\n\n\t\t\t\t============== MENU MUSEU DE ARTE MULTITEMÁTICO ==============\n\n\n\n");
+        printf("\n\n\n\t\t\t\t============== MENU MUSEU DE ARTE MULTITEMÁTICO ==============\n\n\n\n");
         printf("\n\t\t\t\t1 - Apresentação dos Temas\n\n\t\t\t\t2 - Venda de Ingressos\n\n\t\t\t\t3 - Exibição das Obras\n\n\t\t\t\t4 - Lista de Ingressos Comprados\n\n\t\t\t\t5 - Informações Adicionais e Avisos Importantes\n\n\t\t\t\t6 - Voltar\n\n");
         printf("\n\t\t\t\tOpção: ");
         scanf("%d", &op);

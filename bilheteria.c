@@ -13,7 +13,7 @@ void escolhaTema();
 void menuEntrada();
 
 char temasDoUsuario[MAX_BILHETES][40], nomeUsuario[30];
-int numCompras = 0;
+int numCompras = 0, qtd = 0;
 int temaEscolhido, idadeUsuario;
 char codigo[5], pcd;
 int pagamentoRealizado = 0;
@@ -83,6 +83,7 @@ void escolhaTema(){
                 strcpy(ingressos[numCompras].nome, nomeUsuario);
                 ingressos[numCompras].idade = idadeUsuario;
                 numCompras++;
+                qtd++;
             break;
 
             case 2:
@@ -92,6 +93,7 @@ void escolhaTema(){
                 ingressos[numCompras].idade = idadeUsuario;
                 strcpy(temasDoUsuario[numCompras], "150 ANOS DE SANTOS DUMONT");
                 numCompras++;
+                qtd++;
             break;
 
             case 3:
@@ -101,6 +103,7 @@ void escolhaTema(){
                 strcpy(ingressos[numCompras].nome, nomeUsuario);
                 ingressos[numCompras].idade = idadeUsuario;
                 numCompras++;
+                qtd++;
             break;
 
             case 4:
@@ -110,6 +113,7 @@ void escolhaTema(){
                 strcpy(ingressos[numCompras].nome, nomeUsuario);
                 ingressos[numCompras].idade = idadeUsuario;
                 numCompras++;
+                qtd++;
             break;
 
             default:
@@ -139,7 +143,8 @@ void escolhaTema(){
             pagamento();
         }
     }while(op != 's' && op != 'S' && op != 'n' && op != 'N');
-    }
+
+}
 
 void pagamento(){
     srand(time(NULL));
@@ -160,17 +165,18 @@ void pagamento(){
         printf("\n\t\t\t\tA entrada é gratuita!\n\n");
         entradaGratuita = 1;
         pagamentoRealizado = 1;
+        qtd = 0;
     default:
     break;
    }
         if(entradaGratuita != 1){
             if (idadeUsuario >= 60) {
             printf("\n\t\t\t\tTem direito a meia-entrada devido a idade.\n\n");
-            totalPagar = numCompras * meiaEntrada;
+            totalPagar = qtd * meiaEntrada;
             printf("\n\t\t\t\tTotal a Pagar: R$%.2f\n", totalPagar);
         } else if (pcd == 's' || pcd == 'S') {
             printf("\n\t\t\t\tTem direito a meia-entrada devido a ser PcD.\n");
-            totalPagar = numCompras * meiaEntrada;
+            totalPagar = qtd * meiaEntrada;
             printf("\n\t\t\t\tTotal a Pagar: R$%.2f\n", totalPagar);
         } else {
             while (carterinhaEstudante != 's' && carterinhaEstudante != 'S' &&
@@ -183,13 +189,13 @@ void pagamento(){
                 case 's':
                 case 'S':
                     printf("\n\t\t\t\tTem direito a meia-entrada!\n");
-                    totalPagar = numCompras * meiaEntrada;
+                    totalPagar = qtd * meiaEntrada;
                     printf("\n\t\t\t\tTotal a Pagar: R$%.2f\n", totalPagar);
                     break;
                 case 'n':
                 case 'N':
                     printf("\n\t\t\t\tNão tem direito a meia-entrada!\n");
-                    totalPagar = numCompras * valorIngresso;
+                    totalPagar = qtd * valorIngresso;
                     printf("\n\t\t\t\tTotal a Pagar: R$%.2f\n\n", totalPagar);
                     break;
                 default:
@@ -214,13 +220,18 @@ void pagamento(){
                         case '2':
                         case '3':
                             pagamentoRealizado = 1;
-                            printf("\n\t\t\t\tPagamento realizado com sucesso!\n\n\n");
+                            qtd = 0;
+                            printf("\n\t\t\t\tPagamento realizado com sucesso!");
                             break;
                         default:
                             printf("\n\t\t\t\tDigite uma opção válida!\n");
                         }
                     }
                 }
+
+    for (int i = 0; i < MAX_BILHETES; i++) {
+        memset(temasDoUsuario[i], 0, 40 * sizeof(char));
+}
             
         printf("\n\n\n");
         system("pause");

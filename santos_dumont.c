@@ -30,7 +30,7 @@ void menuSantosDumont(){
         exit(1);
     }
 
-    printf("\n\n\n\t\t\t\t================= 150 Anos de Santos Dumont ================\n\n\n\n\n\n");
+    printf("\n\n\n\t\t\t\t=================== 150 Anos de Santos Dumont ==================\n\n\n\n\n\n");
 
     printf("\t\t\t\tEscolha uma opção para explorar cada tópico e responda um pequeno\n\t\t\t\tquestionário sobre o tema para testar seus conhecimentos:\n\n\n");
     printf("\t\t\t\t1 - Biografia e Trajetória de Santos Dumont\n\n\t\t\t\t2 - Invenções e Contribuições\n\n\t\t\t\t3 - Reconhecimento e Honrarias Recebidas\n\n\t\t\t\t4 - Impacto no Desenvolvimento da Aviação Mundial\n\n\t\t\t\t5 - Questionário e Avaliação do Tema\n\n\t\t\t\t6 - Voltar\n\n");
@@ -175,7 +175,7 @@ void questSantosDumont(){
     printf("\n\n\n\t\t\t\t==================== Teste seu Conhecimento ===================\n\n\n\n\n\n");
 
     printf("\t\t\t\t2 - Onde nasceu Santos Dumont?\n\n\n");
-    printf("\t\t\t\ta) Minas Gerais.");
+    printf("\t\t\t\ta) Minas Gerais.\n\n");
     printf("\n\t\t\t\tb) França.\n\n");
     printf("\t\t\t\tc) São Paulo.\n\n");
     printf("\t\t\t\td) Rio de Janeiro.\n\n");
@@ -277,7 +277,7 @@ void questSantosDumont(){
     system("pause");
     system("cls");
 
-    printf("\n\n\n\t\t\t\t================ Avalie sua Experiência ===============\n\n\n\n");
+    printf("\n\n\n\t\t\t\t================ Avalie sua Experiência ===============\n\n\n\n\n\n");
 
     fflush(stdin);
 

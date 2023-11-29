@@ -18,7 +18,7 @@ void validarBilhete();
 void menuEntrada();
 void visualizarBilhete();
 
-char validarNome[40], validarCod[6];
+char validarNome[100], validarCod[6];
 int validarIdade;
 
 void entradaTema(){
@@ -77,7 +77,7 @@ void validarBilhete(){
     char linha[MAX_LINHA];
     char *token;
 
-    printf("\n\n\n\t\t\t\t================== SALA DE EXPOSIÇÕES ==================\n\n\n");
+    printf("\n\n\n\t\t\t\t================== VALIDAÇÃO DO INGRESSO ==================\n\n\n");
 
     printf("\n\t\t\t\tInsira as informações presentes no seu bilhete:\n\n");
 
@@ -164,7 +164,7 @@ void alterarStatusBilhete() {
             fwrite(&ingressos[i], sizeof(struct Registros), numCompras, bilhetesTxt);
             break; 
         }
-    } 
+    }
 
     fclose(bilhetesTxt);
 
